@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -9,7 +10,9 @@ import * as constants from '../../../constants';
 const Register = () => {
   const classes = useStyles();
   const { register, handleSubmit, errors, getValues } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   return (
     <section className={classes.register}>
@@ -112,4 +115,16 @@ const Register = () => {
   );
 };
 
-export default Register;
+const mapStateToProps = (state) => {
+  return {
+    isAuthenticated: state.users.userId,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onAuth: (username, email, password) => dispatch(),
+  };
+};
+
+export default connect(mapStateToProps)(Register);
