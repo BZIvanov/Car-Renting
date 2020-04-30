@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { Typography } from '../../atoms';
+import { Typography, Loading } from '../../atoms';
 import { useStyles } from './styles';
 import * as actions from '../../../store/actions/auth';
 import * as constants from '../../../constants';
 
 const Register = (props) => {
+  const { isLoading } = props;
   const classes = useStyles();
   const { register, handleSubmit, errors, getValues } = useForm();
   const onSubmit = (data) => {
@@ -17,6 +18,11 @@ const Register = (props) => {
 
   return (
     <section className={classes.register}>
+      {isLoading && (
+        <div className={classes.loading}>
+          <Loading />
+        </div>
+      )}
       <div className={classes.content}>
         <Typography variant="h3" color="primary">
           Register form
@@ -118,7 +124,7 @@ const Register = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isAuthenticated: state.users.userId,
+    isLoading: state.users.loading,
   };
 };
 

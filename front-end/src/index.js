@@ -8,7 +8,7 @@ import { theme } from './theme';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import usersReducer from './store/reducers/users';
-
+console.log(theme);
 const rootReducer = combineReducers({
   users: usersReducer,
 });

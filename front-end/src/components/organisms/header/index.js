@@ -1,9 +1,33 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { useStyles } from './styles';
 
-const Header = () => {
+const Header = ({ isAuthenticated }) => {
   const classes = useStyles();
+
+  const navItems = isAuthenticated ? (
+    <>
+      <li>
+        <NavLink className={classes.navItem} to="/add-new-car">
+          ADD NEW CAR
+        </NavLink>
+      </li>
+    </>
+  ) : (
+    <>
+      <li>
+        <NavLink className={classes.navItem} to="/signup">
+          SIGN UP
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className={classes.navItem} to="/signin">
+          SIGN IN
+        </NavLink>
+      </li>
+    </>
+  );
 
   return (
     <header className={classes.header}>
@@ -19,20 +43,17 @@ const Header = () => {
               VIEW AVAILABLE CARS
             </NavLink>
           </li>
-          <li>
-            <NavLink className={classes.navItem} to="/signup">
-              SIGN UP
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className={classes.navItem} to="/signin">
-              SIGN IN
-            </NavLink>
-          </li>
+          {navItems}
         </ul>
       </nav>
     </header>
   );
 };
 
-export default Header;
+const mapStateToProps = (state) => {
+  return {
+    isAuthenticated: !!state.users.userId,
+  };
+};
+
+export default connect(mapStateToProps)(Header);

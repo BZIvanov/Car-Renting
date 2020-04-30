@@ -4,6 +4,7 @@ export const useStyles = makeStyles(() =>
   createStyles({
     register: {
       paddingTop: '100px',
+      position: 'relative',
     },
     content: {
       display: 'flex',
@@ -26,6 +27,11 @@ export const useStyles = makeStyles(() =>
       '& div.MuiFormControl-root': {
         marginBottom: '15px',
       },
+    },
+    loading: {
+      position: 'absolute',
+      top: 'calc(50% - 45px)',
+      left: 'calc(50% - 45px)',
     },
   })
 );

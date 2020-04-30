@@ -32,14 +32,12 @@ export const auth = (username, email, password) => {
         password,
       })
       .then((response) => {
-        console.log('here');
         dispatch(
           authSuccess(response.data.data.username, response.data.data._id)
         );
       })
       .catch((err) => {
-        console.log('there');
-        console.log(err);
+        dispatch(authFail(err.message));
       });
   };
 };
