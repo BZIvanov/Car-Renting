@@ -20,6 +20,8 @@ const reducer = (state = initialState, action) => {
         ...state,
         userId: action.userId,
         username: action.username,
+        error: null,
+        loading: false,
       };
     default:
       return state;

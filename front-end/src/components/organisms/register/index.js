@@ -5,13 +5,14 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { Typography } from '../../atoms';
 import { useStyles } from './styles';
+import * as actions from '../../../store/actions/auth';
 import * as constants from '../../../constants';
 
-const Register = () => {
+const Register = (props) => {
   const classes = useStyles();
   const { register, handleSubmit, errors, getValues } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    props.onAuth(data.username, data.email, data.password);
   };
 
   return (
@@ -123,8 +124,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onAuth: (username, email, password) => dispatch(),
+    onAuth: (username, email, password) =>
+      dispatch(actions.auth(username, email, password)),
   };
 };
 
-export default connect(mapStateToProps)(Register);
+export default connect(mapStateToProps, mapDispatchToProps)(Register);
