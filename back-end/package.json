@@ -4,7 +4,8 @@
   "description": "car renting app",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "prod": "NODE_ENV=production nodemon server.js"
   },
   "keywords": [
     "node.js",
@@ -20,6 +21,7 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.9",
+    "morgan": "^1.10.0",
     "validator": "^13.0.0"
   },
   "devDependencies": {
