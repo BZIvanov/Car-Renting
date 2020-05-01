@@ -3,4 +3,9 @@ const carsController = require('../controllers/carsController');
 
 router.route('/').get(carsController.getAll).post(carsController.addCar);
 
+router
+  .route('/:id')
+  .get(carsController.getCar)
+  .delete(carsController.deleteCar);
+
 module.exports = router;

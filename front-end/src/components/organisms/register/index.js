@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -9,20 +10,31 @@ import * as actions from '../../../store/actions/auth';
 import * as constants from '../../../constants';
 
 const Register = (props) => {
-  const { isLoading } = props;
+  const { isLoading, isAuthenticated } = props;
   const classes = useStyles();
   const { register, handleSubmit, errors, getValues } = useForm();
   const onSubmit = (data) => {
     props.onAuth(data.username, data.email, data.password);
   };
 
+  let loading = null;
+  if (isLoading) {
+    loading = (
+      <div className={classes.loading}>
+        <Loading />
+      </div>
+    );
+  }
+
+  let authRedirect = null;
+  if (isAuthenticated) {
+    authRedirect = <Redirect to={constants.ROOT_PATH} />;
+  }
+
   return (
     <section className={classes.register}>
-      {isLoading && (
-        <div className={classes.loading}>
-          <Loading />
-        </div>
-      )}
+      {authRedirect}
+      {loading}
       <div className={classes.content}>
         <Typography variant="h3" color="primary">
           Register form
@@ -124,6 +136,7 @@ const Register = (props) => {
 
 const mapStateToProps = (state) => {
   return {
+    isAuthenticated: state.users.userId !== null,
     isLoading: state.users.loading,
   };
 };
