@@ -1,50 +1,32 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavItems } from '../../molecules';
 import { useStyles } from './styles';
+import * as constants from '../../../constants';
 
 const Header = ({ isAuthenticated }) => {
   const classes = useStyles();
 
-  const navItems = isAuthenticated ? (
-    <>
-      <li>
-        <NavLink className={classes.navItem} to="/add-new-car">
-          ADD NEW CAR
-        </NavLink>
-      </li>
-    </>
-  ) : (
-    <>
-      <li>
-        <NavLink className={classes.navItem} to="/signup">
-          SIGN UP
-        </NavLink>
-      </li>
-      <li>
-        <NavLink className={classes.navItem} to="/signin">
-          SIGN IN
-        </NavLink>
-      </li>
-    </>
-  );
+  let linkItems = [
+    { value: 'HOME', path: constants.ROOT_PATH },
+    { value: 'VIEW AVAILABLE CARS', path: constants.ALL_AVAILABLE_CARS },
+  ];
+
+  if (isAuthenticated) {
+    linkItems = linkItems.concat([
+      { value: 'ADD NEW CAR', path: constants.ADD_NEW_CAR },
+    ]);
+  } else {
+    linkItems = linkItems.concat([
+      { value: 'SIGN UP', path: constants.SIGNUP_PATH },
+      { value: 'LOG IN', path: constants.LOGIN_PATH },
+    ]);
+  }
 
   return (
     <header className={classes.header}>
       <nav className={classes.navigation}>
-        <ul className={classes.listItems}>
-          <li>
-            <NavLink className={classes.navItem} to="/">
-              HOME
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className={classes.navItem} to="/all-cars">
-              VIEW AVAILABLE CARS
-            </NavLink>
-          </li>
-          {navItems}
-        </ul>
+        <NavItems links={linkItems} />
       </nav>
     </header>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography } from '../../atoms';
+import { Typography, ShadowCover } from '../../atoms';
 import { useStyles } from './styles';
 
 const Landing = () => {
@@ -7,14 +7,14 @@ const Landing = () => {
 
   return (
     <section className={classes.content}>
-      <div className={classes.overlay}>
+      <ShadowCover>
         <Typography variant="h1" color="primary">
           Rent exclusive car
         </Typography>
         <Typography variant="h3" color="secondary">
           FOR YOUR SPECIAL OCCASION!
         </Typography>
-      </div>
+      </ShadowCover>
     </section>
   );
 };
