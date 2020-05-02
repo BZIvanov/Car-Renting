@@ -5,7 +5,10 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
+    useFindAndModify: false,
   })
-  .then(() => {
-    console.log('DB connection successful!');
+  .then((connection) => {
+    console.log(
+      `DB connection successful and ready for ${connection.connections[0].host}`
+    );
   });

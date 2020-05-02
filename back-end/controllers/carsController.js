@@ -26,7 +26,29 @@ module.exports.getAll = catchAsync(async (req, res, next) => {
 });
 
 module.exports.getCar = catchAsync(async (req, res, next) => {
-  const car = await Car.find({ _id: req.params.id });
+  const car = await Car.findById(req.params.id);
+
+  if (!car) {
+    return next(new AppError('No document found with that ID', 404));
+  }
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      car,
+    },
+  });
+});
+
+module.exports.updateCar = catchAsync(async (req, res, next) => {
+  const car = await Car.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true,
+  });
+
+  if (!car) {
+    return next(new AppError('No document found with that ID', 404));
+  }
 
   res.status(200).json({
     status: 'success',
