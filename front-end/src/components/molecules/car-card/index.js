@@ -1,4 +1,5 @@
 import React from 'react';
+import { Typography } from '../../atoms';
 import { useStyles } from './styles';
 
 const CarCard = (props) => {
@@ -7,9 +8,15 @@ const CarCard = (props) => {
 
   return (
     <article className={classes.car}>
-      <h1>{car.model}</h1>
-      <img src={car.image} />
-      <p>{car.pricePerDay}</p>
+      <div className={classes.imgContainer}>
+        <img src={car.image} alt="Car" />
+      </div>
+      <div className={classes.carInfo}>
+        <Typography variant="h4">{car.model}</Typography>
+        <Typography variant="subtitle1">
+          Price per day: {car.pricePerDay} lv.
+        </Typography>
+      </div>
     </article>
   );
 };
