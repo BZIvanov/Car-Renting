@@ -13,11 +13,7 @@ export const FONT_MEDIUM = 500;
 export const FONT_BOLD = 700;
 
 // User forms
-export const FIELD_MINLENGTH = 3;
-export const FIELD_MIDLENGTH = 8;
-export const FIELD_MAXLENGTH = 30;
-export const FIELD_REQUIRED = 'This field is required';
-export const FIELD_MINLENGTH_TEXT = `This field must be ${FIELD_MINLENGTH} or more symbols`;
-export const FIELD_MIDLENGTH_TEXT = `This field must be ${FIELD_MIDLENGTH} or more symbols`;
-export const FIELD_MAXLENGTH_TEXT = `This field must be ${FIELD_MAXLENGTH} or less symbols`;
-export const INVALID_EMAIL = 'Please provide valid e-mail';
+export const TEXT_VERY_SHORT = 3;
+export const TEXT_MID_LENGTH = 8;
+export const TEXT_LONG = 30;
+export const PASSWORDS_MISMATCH = 'passwords do not match';

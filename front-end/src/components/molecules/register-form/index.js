@@ -1,13 +1,15 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { SignupSchema } from './schema';
 import Button from '@material-ui/core/Button';
 import { TextField } from '../../atoms';
 import { useStyles } from './styles';
-import * as constants from '../../../constants';
 
 const RegisterForm = (props) => {
   const classes = useStyles();
-  const { register, handleSubmit, errors, getValues } = useForm();
+  const { register, handleSubmit, errors } = useForm({
+    validationSchema: SignupSchema,
+  });
 
   const onSubmit = (data) => {
     props.auth(data.username, data.email, data.password);
@@ -17,17 +19,7 @@ const RegisterForm = (props) => {
     <form className={classes.form} onSubmit={handleSubmit(onSubmit)} noValidate>
       <TextField
         name="username"
-        inputRef={register({
-          required: constants.FIELD_REQUIRED,
-          minLength: {
-            value: constants.FIELD_MINLENGTH,
-            message: constants.FIELD_MINLENGTH_TEXT,
-          },
-          maxLength: {
-            value: constants.FIELD_MAXLENGTH,
-            message: constants.FIELD_MAXLENGTH_TEXT,
-          },
-        })}
+        inputRef={register}
         error={errors.username && errors.username.message.length > 0}
         helperText={errors.username && errors.username.message}
         label="Username"
@@ -35,17 +27,7 @@ const RegisterForm = (props) => {
       />
       <TextField
         name="email"
-        inputRef={register({
-          required: constants.FIELD_REQUIRED,
-          maxLength: {
-            value: constants.FIELD_MAXLENGTH,
-            message: constants.FIELD_MAXLENGTH_TEXT,
-          },
-          pattern: {
-            value: /^[\w.]+@[a-z]+\.[a-z]{2,3}$/,
-            message: constants.INVALID_EMAIL,
-          },
-        })}
+        inputRef={register}
         error={errors.email && errors.email.message.length > 0}
         helperText={errors.email && errors.email.message}
         label="E-mail"
@@ -53,17 +35,7 @@ const RegisterForm = (props) => {
       />
       <TextField
         name="password"
-        inputRef={register({
-          required: constants.FIELD_REQUIRED,
-          minLength: {
-            value: constants.FIELD_MIDLENGTH,
-            message: constants.FIELD_MIDLENGTH_TEXT,
-          },
-          maxLength: {
-            value: constants.FIELD_MAXLENGTH,
-            message: constants.FIELD_MAXLENGTH_TEXT,
-          },
-        })}
+        inputRef={register}
         error={errors.password && errors.password.message.length > 0}
         helperText={errors.password && errors.password.message}
         label="Password"
@@ -71,21 +43,7 @@ const RegisterForm = (props) => {
       />
       <TextField
         name="confirmPassword"
-        inputRef={register({
-          required: constants.FIELD_REQUIRED,
-          minLength: {
-            value: constants.FIELD_MIDLENGTH,
-            message: constants.FIELD_MIDLENGTH_TEXT,
-          },
-          maxLength: {
-            value: constants.FIELD_MAXLENGTH,
-            message: constants.FIELD_MAXLENGTH_TEXT,
-          },
-          validate: {
-            matched: (value) =>
-              value === getValues('password') || 'Passwords should match',
-          },
-        })}
+        inputRef={register}
         error={
           errors.confirmPassword && errors.confirmPassword.message.length > 0
         }
