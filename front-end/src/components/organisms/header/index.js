@@ -9,12 +9,13 @@ const Header = ({ isAuthenticated }) => {
 
   let linkItems = [
     { value: 'HOME', path: constants.ROOT_PATH },
-    { value: 'VIEW AVAILABLE CARS', path: constants.ALL_AVAILABLE_CARS },
+    { value: 'VIEW AVAILABLE CARS', path: constants.ALL_AVAILABLE_CARS_PATH },
   ];
 
   if (isAuthenticated) {
     linkItems = linkItems.concat([
-      { value: 'ADD NEW CAR', path: constants.ADD_NEW_CAR },
+      { value: 'ADD NEW CAR', path: constants.ADD_NEW_CAR_PATH },
+      { value: 'LOGOUT', path: constants.LOGOUT_PATH },
     ]);
   } else {
     linkItems = linkItems.concat([

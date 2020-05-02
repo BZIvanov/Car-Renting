@@ -2,8 +2,9 @@
 export const ROOT_PATH = '/';
 export const SIGNUP_PATH = '/signup';
 export const LOGIN_PATH = '/login';
-export const ALL_AVAILABLE_CARS = '/all-available-cars';
-export const ADD_NEW_CAR = '/add-new-car';
+export const LOGOUT_PATH = '/logout';
+export const ALL_AVAILABLE_CARS_PATH = '/all-available-cars';
+export const ADD_NEW_CAR_PATH = '/add-new-car';
 
 // Font sizes
 export const FONT_LIGHT = 300;
