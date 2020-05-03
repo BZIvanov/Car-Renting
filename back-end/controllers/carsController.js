@@ -1,6 +1,7 @@
 const Car = require('../models/carModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
+const APIFeatures = require('../utils/apiFeatures');
 
 module.exports.addCar = catchAsync(async (req, res, next) => {
   const newCar = await Car.create(req.body);
@@ -14,7 +15,11 @@ module.exports.addCar = catchAsync(async (req, res, next) => {
 });
 
 module.exports.getAll = catchAsync(async (req, res, next) => {
-  const cars = await Car.find({ isRented: false });
+  const filters = new APIFeatures(Car.find({ isRented: false }), req.query)
+    .sort()
+    .limitFields()
+    .paginate();
+  const cars = await filters.docs;
 
   res.status(200).json({
     status: 'success',

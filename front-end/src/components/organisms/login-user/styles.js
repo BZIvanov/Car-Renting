@@ -1,17 +1,18 @@
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 
-export const useStyles = makeStyles((theme) =>
+export const useStyles = makeStyles(() =>
   createStyles({
-    cars: {
-      maxWidth: theme.breakpoints.values.lg,
-      margin: '0 auto',
+    section: {
+      paddingTop: '100px',
+      position: 'relative',
     },
     content: {
       display: 'flex',
-      flexWrap: 'wrap',
+      flexDirection: 'column',
       justifyContent: 'center',
-      '& article': {
-        margin: '20px',
+      alignItems: 'center',
+      '& h3': {
+        marginBottom: '30px',
       },
     },
     loading: {

@@ -6,6 +6,7 @@ import {
   AvailableCars,
   AddNewCar,
   Register,
+  Login,
   NotFound,
 } from './components/pages';
 import { Layout } from './components/organisms';
@@ -25,6 +26,7 @@ function App() {
             />
             <Route path={constants.ADD_NEW_CAR_PATH} component={AddNewCar} />
             <Route path={constants.SIGNUP_PATH} component={Register} />
+            <Route path={constants.LOGIN_PATH} component={Login} />
             <Route component={NotFound} />
           </Switch>
         </Layout>

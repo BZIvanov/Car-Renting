@@ -25,8 +25,11 @@ export const authFail = (error) => {
 export const auth = (username, email, password) => {
   return (dispatch) => {
     dispatch(authStart());
+
+    const formType = username ? 'signup' : 'login';
+
     axios
-      .post('http://localhost:3100/api/user/signup', {
+      .post(`http://localhost:3100/api/user/${formType}`, {
         username,
         email,
         password,

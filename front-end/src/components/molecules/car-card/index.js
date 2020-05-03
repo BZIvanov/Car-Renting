@@ -14,8 +14,16 @@ const CarCard = (props) => {
       <div className={classes.carInfo}>
         <Typography variant="h4">{car.model}</Typography>
         <Typography variant="subtitle1">
-          Price per day: {car.pricePerDay} lv.
+          Price per day: {car.pricePerDay.toFixed(2)} lv.
         </Typography>
+        <div className={classes.generalInfo}>
+          <Typography variant="subtitle2">
+            Year: <span>{car.year}</span>
+          </Typography>
+          <Typography variant="subtitle2">
+            City: <span>{car.city}</span>
+          </Typography>
+        </div>
       </div>
     </article>
   );

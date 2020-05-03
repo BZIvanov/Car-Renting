@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { CreateCarForm } from '../../molecules';
+import { LoginForm } from '../../molecules';
 import { Typography, Loading } from '../../atoms';
 import { useStyles } from './styles';
-import * as actions from '../../../store/actions/cars';
+import * as actions from '../../../store/actions/auth';
 import * as constants from '../../../constants';
 
-const NewCar = (props) => {
-  const { isLoading, isSuccess, onAddCar } = props;
+const LoginUser = (props) => {
+  const { isLoading, isAuthenticated, onAuth } = props;
   const classes = useStyles();
 
   let loading = null;
@@ -20,20 +20,20 @@ const NewCar = (props) => {
     );
   }
 
-  let redirect = null;
-  if (isSuccess) {
-    redirect = <Redirect to={constants.ALL_AVAILABLE_CARS_PATH} />;
+  let authRedirect = null;
+  if (isAuthenticated) {
+    authRedirect = <Redirect to={constants.ROOT_PATH} />;
   }
 
   return (
     <section className={classes.section}>
+      {authRedirect}
       {loading}
-      {redirect}
       <div className={classes.content}>
         <Typography variant="h3" color="primary">
-          Add new car form
+          Login form
         </Typography>
-        <CreateCarForm addCar={onAddCar} />
+        <LoginForm auth={onAuth} />
       </div>
     </section>
   );
@@ -41,15 +41,16 @@ const NewCar = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isSuccess: state.cars.success,
-    isLoading: state.cars.loading,
+    isAuthenticated: state.users.userId !== null,
+    isLoading: state.users.loading,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onAddCar: (data) => dispatch(actions.createCar(data)),
+    onAuth: (username, email, password) =>
+      dispatch(actions.auth(username, email, password)),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewCar);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginUser);

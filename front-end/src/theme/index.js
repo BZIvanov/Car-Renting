@@ -116,10 +116,24 @@ export const theme = createMuiTheme({
       fontSize: '1.2rem',
       lineHeight: 1.3,
       [`@media (max-width:1280px)`]: {
-        fontSize: '1.0rem',
+        fontSize: '1rem',
       },
       [`@media (max-width:960px)`]: {
         fontSize: '0.9rem',
+      },
+      [`@media (max-width:600px)`]: {
+        fontSize: '0.8rem',
+      },
+    },
+    subtitle2: {
+      fontWeight: FONT_LIGHT,
+      fontSize: '1rem',
+      lineHeight: 1.2,
+      [`@media (max-width:1280px)`]: {
+        fontSize: '0.9rem',
+      },
+      [`@media (max-width:960px)`]: {
+        fontSize: '0.8rem',
       },
       [`@media (max-width:600px)`]: {
         fontSize: '0.8rem',
