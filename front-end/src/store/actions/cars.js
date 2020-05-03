@@ -7,10 +7,12 @@ export const carsStart = () => {
   };
 };
 
-export const getCarsSuccess = (cars) => {
+export const getCarsSuccess = (cars, allCarsCount, page) => {
   return {
     type: actionTypes.GET_CARS_SUCCESS,
     cars,
+    allCarsCount,
+    page,
   };
 };
 
@@ -27,13 +29,15 @@ export const carsFail = (error) => {
   };
 };
 
-export const fetchCars = () => {
+export const fetchCars = (page = 1) => {
   return (dispatch) => {
     dispatch(carsStart());
     axios
-      .get('http://localhost:3100/api/cars')
+      .get(`http://localhost:3100/api/cars?page=${page}`)
       .then((response) => {
-        dispatch(getCarsSuccess(response.data.data.cars));
+        dispatch(
+          getCarsSuccess(response.data.data.cars, response.data.results, page)
+        );
       })
       .catch((err) => {
         dispatch(carsFail(err.message));

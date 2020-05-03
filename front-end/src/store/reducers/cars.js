@@ -1,8 +1,10 @@
 import * as actionTypes from '../actions/actionsTypes';
 
 const initialState = {
-  loading: null,
+  loading: false,
   cars: [],
+  page: 1,
+  allCount: 0,
   success: false,
   error: null,
 };
@@ -20,6 +22,8 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         cars: action.cars,
+        page: action.page,
+        allCount: action.allCarsCount,
         loading: false,
         error: null,
       };

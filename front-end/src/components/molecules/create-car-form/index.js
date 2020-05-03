@@ -13,7 +13,6 @@ const CreateCarForm = (props) => {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
     props.addCar(data);
   };
 

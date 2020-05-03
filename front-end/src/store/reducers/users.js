@@ -4,7 +4,7 @@ const initialState = {
   userId: null,
   username: null,
   error: null,
-  loading: null,
+  loading: false,
 };
 
 const reducer = (state = initialState, action) => {

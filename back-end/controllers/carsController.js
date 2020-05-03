@@ -15,6 +15,7 @@ module.exports.addCar = catchAsync(async (req, res, next) => {
 });
 
 module.exports.getAll = catchAsync(async (req, res, next) => {
+  const allCarsCount = await Car.countDocuments();
   const filters = new APIFeatures(Car.find({ isRented: false }), req.query)
     .sort()
     .limitFields()
@@ -23,7 +24,7 @@ module.exports.getAll = catchAsync(async (req, res, next) => {
 
   res.status(200).json({
     status: 'success',
-    results: cars.length,
+    results: allCarsCount,
     data: {
       cars,
     },
