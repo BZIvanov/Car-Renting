@@ -1,9 +1,9 @@
 import axios from 'axios';
 import * as actionTypes from './actionsTypes';
 
-export const getCarsStart = () => {
+export const carsStart = () => {
   return {
-    type: actionTypes.GET_CARS_START,
+    type: actionTypes.CARS_START,
   };
 };
 
@@ -14,23 +14,43 @@ export const getCarsSuccess = (cars) => {
   };
 };
 
-export const getCarsFail = (error) => {
+export const createCarSuccess = () => {
   return {
-    type: actionTypes.GET_CARS_FAIL,
+    type: actionTypes.CREATE_CAR_SUCCESS,
+  };
+};
+
+export const carsFail = (error) => {
+  return {
+    type: actionTypes.CARS_FAIL,
     error,
   };
 };
 
 export const fetchCars = () => {
   return (dispatch) => {
-    dispatch(getCarsStart());
+    dispatch(carsStart());
     axios
       .get('http://localhost:3100/api/cars')
       .then((response) => {
         dispatch(getCarsSuccess(response.data.data.cars));
       })
       .catch((err) => {
-        dispatch(getCarsFail(err.message));
+        dispatch(carsFail(err.message));
+      });
+  };
+};
+
+export const createCar = (data) => {
+  return (dispatch) => {
+    dispatch(carsStart());
+    axios
+      .post('http://localhost:3100/api/cars', data)
+      .then(() => {
+        dispatch(createCarSuccess());
+      })
+      .catch((err) => {
+        dispatch(carsFail(err.message));
       });
   };
 };

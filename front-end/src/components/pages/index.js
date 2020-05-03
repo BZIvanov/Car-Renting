@@ -1,4 +1,5 @@
-export { default as HomePage } from './home-page';
-export { default as AvailableCarsPage } from './available-cars-page';
-export { default as RegisterPage } from './register-page';
-export { default as NotFoundPage } from './not-found-page';
+export { default as Home } from './home';
+export { default as AvailableCars } from './available-cars';
+export { default as AddNewCar } from './add-new-car';
+export { default as Register } from './register';
+export { default as NotFound } from './not-found';

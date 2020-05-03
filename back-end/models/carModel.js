@@ -24,6 +24,31 @@ const carSchema = new mongoose.Schema({
       `A car image must have ${constants.LONG_STRING_MAX_LENGTH} or less characters`,
     ],
   },
+  year: {
+    type: Number,
+    required: [true, 'A car must have an year, when made'],
+    min: [
+      constants.MIN_YEAR_MADE,
+      `Year must be ${constants.MIN_YEAR_MADE} or above`,
+    ],
+    max: [
+      constants.MAX_YEAR_MADE,
+      `Year must be equal or below ${constants.MAX_YEAR_MADE}`,
+    ],
+  },
+  city: {
+    type: String,
+    trim: true,
+    required: [true, 'A car must have a city of registration'],
+    minlength: [
+      constants.SHORT_STRING_MIN_LENGTH,
+      `A car city must have ${constants.SHORT_STRING_MIN_LENGTH} or more characters`,
+    ],
+    maxlength: [
+      constants.SHORT_STRING_MAX_LENGTH,
+      `A car city must have ${constants.SHORT_STRING_MAX_LENGTH} or less characters`,
+    ],
+  },
   pricePerDay: {
     type: Number,
     required: [true, 'A car must have a rent price'],

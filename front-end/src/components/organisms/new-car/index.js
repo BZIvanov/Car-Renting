@@ -1,15 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { RegisterForm } from '../../molecules';
+import { CreateCarForm } from '../../molecules';
 import { Typography, Loading } from '../../atoms';
 import { useStyles } from './styles';
-import * as actions from '../../../store/actions/auth';
+import * as actions from '../../../store/actions/cars';
 import * as constants from '../../../constants';
 
-const Register = (props) => {
-  const { isLoading, isAuthenticated, onAuth } = props;
+const NewCar = (props) => {
+  const { isLoading, isSuccess, onAddCar } = props;
   const classes = useStyles();
+  console.log(props);
 
   let loading = null;
   if (isLoading) {
@@ -20,20 +21,20 @@ const Register = (props) => {
     );
   }
 
-  let authRedirect = null;
-  if (isAuthenticated) {
-    authRedirect = <Redirect to={constants.ROOT_PATH} />;
+  let redirect = null;
+  if (isSuccess) {
+    redirect = <Redirect to={constants.ALL_AVAILABLE_CARS_PATH} />;
   }
 
   return (
-    <section className={classes.register}>
-      {authRedirect}
+    <section className={classes.section}>
       {loading}
+      {redirect}
       <div className={classes.content}>
         <Typography variant="h3" color="primary">
-          Register form
+          Add new car form
         </Typography>
-        <RegisterForm auth={onAuth} />
+        <CreateCarForm addCar={onAddCar} />
       </div>
     </section>
   );
@@ -41,16 +42,15 @@ const Register = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isAuthenticated: state.users.userId !== null,
-    isLoading: state.users.loading,
+    isSuccess: state.cars.success,
+    isLoading: state.cars.loading,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onAuth: (username, email, password) =>
-      dispatch(actions.auth(username, email, password)),
+    onAddCar: (data) => dispatch(actions.createCar(data)),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Register);
+export default connect(mapStateToProps, mapDispatchToProps)(NewCar);

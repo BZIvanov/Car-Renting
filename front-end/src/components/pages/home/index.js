@@ -1,8 +1,8 @@
 import React from 'react';
 import { Landing } from '../../organisms';
 
-const HomePage = () => {
+const Home = () => {
   return <Landing />;
 };
 
-export default HomePage;
+export default Home;

@@ -3,15 +3,17 @@ import * as actionTypes from '../actions/actionsTypes';
 const initialState = {
   loading: null,
   cars: [],
+  success: false,
   error: null,
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.GET_CARS_START:
+    case actionTypes.CARS_START:
       return {
         ...state,
         loading: true,
+        success: false,
         error: null,
       };
     case actionTypes.GET_CARS_SUCCESS:
@@ -21,7 +23,14 @@ const reducer = (state = initialState, action) => {
         loading: false,
         error: null,
       };
-    case actionTypes.GET_CARS_FAIL:
+    case actionTypes.CREATE_CAR_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        success: true,
+        error: null,
+      };
+    case actionTypes.CARS_FAIL:
       return {
         ...state,
         loading: false,

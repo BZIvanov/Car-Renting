@@ -1,8 +1,8 @@
 import React from 'react';
 import { CarsList } from '../../organisms';
 
-const AvailableCarsPage = () => {
+const AvailableCars = () => {
   return <CarsList />;
 };
 
-export default AvailableCarsPage;
+export default AvailableCars;
