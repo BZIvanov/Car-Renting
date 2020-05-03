@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { NavItems } from '../../molecules';
+import { NavItems, NavSearch } from '../../molecules';
 import { useStyles } from './styles';
 import * as constants from '../../../constants';
 
@@ -28,6 +28,7 @@ const Header = ({ isAuthenticated }) => {
     <header className={classes.header}>
       <nav className={classes.navigation}>
         <NavItems links={linkItems} />
+        <NavSearch />
       </nav>
     </header>
   );
