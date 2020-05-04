@@ -6,7 +6,7 @@ const handleCastErrorDB = (err) => {
 };
 
 const handleDuplicateFieldsDB = (err) => {
-  const value = err.errmsg.match(/(["'])(\\?.)*?\1/)[0];
+  const value = err.errmsg.match(/(["']).*?\1/)[0];
 
   const message = `Duplicate field value: ${value}. Please use another value!`;
   return new AppError(message, 400);
@@ -35,7 +35,7 @@ const sendErrorDev = (err, res) => {
 };
 
 const sendErrorProd = (err, res) => {
-  if (err.isOperational) {
+  if (err.isAppError) {
     res.status(err.statusCode).json({
       status: err.status,
       message: err.message,
@@ -45,7 +45,7 @@ const sendErrorProd = (err, res) => {
 
     res.status(500).json({
       status: 'error',
-      message: 'Something went very wrong!',
+      message: 'Something went wrong!',
     });
   }
 };

@@ -7,6 +7,12 @@
 app.use(express.json({ limit: '10kb' }));
 ```
 
+2. In the package.json file this command is Windows specific. Note that _&&_ are right after the variable name otherwise we would get an extra space
+
+```javascript
+"prod": "set NODE_ENV=production&& nodemon server.js"
+```
+
 ## Errors
 
 1. CastError - this error.name can happen with mongoose
