@@ -32,3 +32,9 @@ Examples:
 Examples:
 
 - trying to create new document without providing required field
+
+4. JsonWebTokenError - this error.name can happen with jwt token
+
+Examples:
+
+- manipulating the token, by regenerating with invalid user id
