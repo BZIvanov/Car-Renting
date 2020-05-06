@@ -3,7 +3,7 @@ const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const APIFeatures = require('../utils/apiFeatures');
 
-module.exports.addCar = catchAsync(async (req, res, next) => {
+exports.addCar = catchAsync(async (req, res, next) => {
   const newCar = await Car.create(req.body);
 
   res.status(201).json({
@@ -14,7 +14,7 @@ module.exports.addCar = catchAsync(async (req, res, next) => {
   });
 });
 
-module.exports.getAll = catchAsync(async (req, res, next) => {
+exports.getAll = catchAsync(async (req, res, next) => {
   const allCarsCount = await Car.countDocuments();
   const filters = new APIFeatures(Car.find({ isRented: false }), req.query)
     .sort()
@@ -31,7 +31,7 @@ module.exports.getAll = catchAsync(async (req, res, next) => {
   });
 });
 
-module.exports.getCar = catchAsync(async (req, res, next) => {
+exports.getCar = catchAsync(async (req, res, next) => {
   const car = await Car.findById(req.params.id);
 
   if (!car) {
@@ -46,7 +46,7 @@ module.exports.getCar = catchAsync(async (req, res, next) => {
   });
 });
 
-module.exports.updateCar = catchAsync(async (req, res, next) => {
+exports.updateCar = catchAsync(async (req, res, next) => {
   const car = await Car.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
     runValidators: true,
@@ -64,7 +64,7 @@ module.exports.updateCar = catchAsync(async (req, res, next) => {
   });
 });
 
-module.exports.deleteCar = catchAsync(async (req, res, next) => {
+exports.deleteCar = catchAsync(async (req, res, next) => {
   const car = await Car.findByIdAndDelete(req.params.id);
 
   if (!car) {

@@ -32,7 +32,7 @@ const sendTokenAndUserData = (res, statusCode, token, user) => {
   });
 };
 
-module.exports.signup = catchAsync(async (req, res, next) => {
+exports.signup = catchAsync(async (req, res, next) => {
   const user = await User.create({
     username: req.body.username,
     email: req.body.email,
@@ -43,7 +43,7 @@ module.exports.signup = catchAsync(async (req, res, next) => {
   sendTokenAndUserData(res, 201, token, user);
 });
 
-module.exports.login = catchAsync(async (req, res, next) => {
+exports.login = catchAsync(async (req, res, next) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -60,7 +60,7 @@ module.exports.login = catchAsync(async (req, res, next) => {
   sendTokenAndUserData(res, 200, token, user);
 });
 
-module.exports.protect = catchAsync(async (req, res, next) => {
+exports.protect = catchAsync(async (req, res, next) => {
   let token;
   if (
     req.headers.authorization &&
