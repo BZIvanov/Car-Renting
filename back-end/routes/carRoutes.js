@@ -4,7 +4,7 @@ const authController = require('../controllers/authController');
 
 router
   .route('/')
-  .get(authController.protect, carsController.getAll)
+  .get(carsController.getAll)
   .post(authController.protect, carsController.addCar);
 
 router

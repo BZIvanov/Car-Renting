@@ -48,7 +48,10 @@ export const auth = (username, email, password) => {
       )
       .then((response) => {
         dispatch(
-          authSuccess(response.data.data.username, response.data.data._id)
+          authSuccess(
+            response.data.data.user.username,
+            response.data.data.user._id
+          )
         );
       })
       .catch((err) => {
@@ -65,7 +68,7 @@ export const logout = () => {
         withCredentials: true,
       })
       .then(() => {
-        dispatch(authLogout);
+        dispatch(authLogout());
       })
       .catch((err) => {
         dispatch(authFail(err.message));
