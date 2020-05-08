@@ -41,6 +41,7 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.0",
     "ndb": "^1.1.5",
+    "ngrok": "^3.2.7",
     "nodemon": "^2.0.3",
     "prettier": "^2.0.4"
   },

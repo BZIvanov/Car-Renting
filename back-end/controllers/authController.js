@@ -33,10 +33,11 @@ const sendTokenAndUserData = (res, statusCode, token, user) => {
 };
 
 exports.signup = catchAsync(async (req, res, next) => {
+  const { username, email, password } = req.body;
   const user = await User.create({
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password,
+    username,
+    email,
+    password,
   });
 
   const token = signToken(user._id);

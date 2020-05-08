@@ -24,7 +24,12 @@ const limiter = rateLimit({
 });
 app.use('/api', limiter);
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ['http://localhost:3000'],
+    credentials: true,
+  })
+);
 
 app.use(express.json({ limit: '10kb' }));
 app.use(cookieParser());

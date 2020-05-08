@@ -33,7 +33,9 @@ export const fetchCars = (page = 1) => {
   return (dispatch) => {
     dispatch(carsStart());
     axios
-      .get(`http://localhost:3100/api/cars?page=${page}`)
+      .get(`http://localhost:3100/api/cars?page=${page}`, {
+        withCredentials: true,
+      })
       .then((response) => {
         dispatch(
           getCarsSuccess(response.data.data.cars, response.data.results, page)
@@ -49,7 +51,9 @@ export const createCar = (data) => {
   return (dispatch) => {
     dispatch(carsStart());
     axios
-      .post('http://localhost:3100/api/cars', data)
+      .post('http://localhost:3100/api/cars', data, {
+        withCredentials: true,
+      })
       .then(() => {
         dispatch(createCarSuccess());
       })

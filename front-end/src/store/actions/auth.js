@@ -35,11 +35,17 @@ export const auth = (username, email, password) => {
     const formType = username ? 'signup' : 'login';
 
     axios
-      .post(`http://localhost:3100/api/user/${formType}`, {
-        username,
-        email,
-        password,
-      })
+      .post(
+        `http://localhost:3100/api/user/${formType}`,
+        {
+          username,
+          email,
+          password,
+        },
+        {
+          withCredentials: true,
+        }
+      )
       .then((response) => {
         dispatch(
           authSuccess(response.data.data.username, response.data.data._id)
@@ -55,7 +61,9 @@ export const logout = () => {
   return (dispatch) => {
     dispatch(authStart());
     axios
-      .get('http://localhost:3100/api/user/logout')
+      .get('http://localhost:3100/api/user/logout', {
+        withCredentials: true,
+      })
       .then(() => {
         dispatch(authLogout);
       })
