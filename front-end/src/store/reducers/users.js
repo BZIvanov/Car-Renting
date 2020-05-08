@@ -23,6 +23,14 @@ const reducer = (state = initialState, action) => {
         error: null,
         loading: false,
       };
+    case actionTypes.AUTH_LOGOUT:
+      return {
+        ...state,
+        error: null,
+        loading: false,
+        userId: null,
+        username: null,
+      };
     case actionTypes.AUTH_FAIL:
       return {
         ...state,

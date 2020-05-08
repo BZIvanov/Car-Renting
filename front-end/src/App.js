@@ -9,7 +9,7 @@ import {
   Login,
   NotFound,
 } from './components/pages';
-import { Layout } from './components/organisms';
+import { Layout, Logout } from './components/organisms';
 import * as constants from './constants';
 
 function App() {
@@ -27,6 +27,7 @@ function App() {
             <Route path={constants.ADD_NEW_CAR_PATH} component={AddNewCar} />
             <Route path={constants.SIGNUP_PATH} component={Register} />
             <Route path={constants.LOGIN_PATH} component={Login} />
+            <Route path={constants.LOGOUT_PATH} component={Logout} />
             <Route component={NotFound} />
           </Switch>
         </Layout>

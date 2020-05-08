@@ -15,6 +15,12 @@ export const authSuccess = (username, userId) => {
   };
 };
 
+export const authLogout = () => {
+  return {
+    type: actionTypes.AUTH_LOGOUT,
+  };
+};
+
 export const authFail = (error) => {
   return {
     type: actionTypes.AUTH_FAIL,
@@ -38,6 +44,20 @@ export const auth = (username, email, password) => {
         dispatch(
           authSuccess(response.data.data.username, response.data.data._id)
         );
+      })
+      .catch((err) => {
+        dispatch(authFail(err.message));
+      });
+  };
+};
+
+export const logout = () => {
+  return (dispatch) => {
+    dispatch(authStart());
+    axios
+      .get('http://localhost:3100/api/user/logout')
+      .then(() => {
+        dispatch(authLogout);
       })
       .catch((err) => {
         dispatch(authFail(err.message));
