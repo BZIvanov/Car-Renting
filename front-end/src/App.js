@@ -10,9 +10,10 @@ import {
   NotFound,
 } from './components/pages';
 import { Layout, Logout } from './components/organisms';
+import { PrivateRoute } from './components/atoms';
 import * as constants from './constants';
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <CssBaseline />
@@ -25,13 +26,16 @@ function App() {
           />
           <Route path={constants.SIGNUP_PATH} component={Register} />
           <Route path={constants.LOGIN_PATH} component={Login} />
-          <Route path={constants.ADD_NEW_CAR_PATH} component={AddNewCar} />
-          <Route path={constants.LOGOUT_PATH} component={Logout} />
+          <PrivateRoute
+            path={constants.ADD_NEW_CAR_PATH}
+            component={AddNewCar}
+          />
+          <PrivateRoute path={constants.LOGOUT_PATH} component={Logout} />
           <Route component={NotFound} />
         </Switch>
       </Layout>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
