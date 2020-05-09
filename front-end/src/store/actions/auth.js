@@ -8,11 +8,11 @@ export const authStart = () => {
   };
 };
 
-export const authSuccess = (username, userId) => {
+export const authSuccess = (username, token) => {
   return {
     type: actionTypes.AUTH_SUCCESS,
     username,
-    userId,
+    token,
   };
 };
 
@@ -49,16 +49,14 @@ export const auth = (username, email, password) => {
       )
       .then((response) => {
         dispatch(
-          authSuccess(
-            response.data.data.user.username,
-            response.data.data.user._id
-          )
+          authSuccess(response.data.data.user.username, response.data.token)
         );
         dispatch(
           setAlert(`Welcome ${response.data.data.user.username}`, 'success')
         );
       })
       .catch((err) => {
+        dispatch(setAlert(err.response.data.message, 'danger'));
         dispatch(authFail(err.message));
       });
   };

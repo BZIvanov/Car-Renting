@@ -11,24 +11,13 @@ const NewCar = (props) => {
   const { isLoading, isSuccess, onAddCar } = props;
   const classes = useStyles();
 
-  let loading = null;
-  if (isLoading) {
-    loading = (
-      <div className={classes.loading}>
-        <Loading />
-      </div>
-    );
-  }
-
-  let redirect = null;
   if (isSuccess) {
-    redirect = <Redirect to={constants.ALL_AVAILABLE_CARS_PATH} />;
+    return <Redirect to={constants.ALL_AVAILABLE_CARS_PATH} />;
   }
 
   return (
     <section className={classes.section}>
-      {loading}
-      {redirect}
+      {isLoading && <Loading />}
       <div className={classes.content}>
         <Typography variant="h3" color="primary">
           Add new car form

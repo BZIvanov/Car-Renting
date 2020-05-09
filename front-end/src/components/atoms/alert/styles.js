@@ -5,14 +5,17 @@ export const useStyles = makeStyles((theme) =>
     alert: {
       position: 'absolute',
       width: '80%',
-      backgroundColor: 'green',
       textAlign: 'center',
+      color: theme.palette.common.white,
       top: 80,
       left: '10%',
       zIndex: 1500,
     },
     success: {
-      color: theme.palette.common.white,
+      backgroundColor: theme.palette.success.main,
+    },
+    danger: {
+      backgroundColor: theme.palette.warning.main,
     },
   })
 );

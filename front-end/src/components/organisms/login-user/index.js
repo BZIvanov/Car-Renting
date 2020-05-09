@@ -11,24 +11,13 @@ const LoginUser = (props) => {
   const { isLoading, isAuthenticated, onAuth } = props;
   const classes = useStyles();
 
-  let loading = null;
-  if (isLoading) {
-    loading = (
-      <div className={classes.loading}>
-        <Loading />
-      </div>
-    );
-  }
-
-  let authRedirect = null;
   if (isAuthenticated) {
-    authRedirect = <Redirect to={constants.ROOT_PATH} />;
+    return <Redirect to={constants.ROOT_PATH} />;
   }
 
   return (
     <section className={classes.section}>
-      {authRedirect}
-      {loading}
+      {isLoading && <Loading />}
       <div className={classes.content}>
         <Typography variant="h3" color="primary">
           Login form
@@ -41,7 +30,7 @@ const LoginUser = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isAuthenticated: state.users.userId !== null,
+    isAuthenticated: state.users.token !== null,
     isLoading: state.users.loading,
   };
 };

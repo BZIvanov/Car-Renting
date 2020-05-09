@@ -3,7 +3,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 export const useStyles = makeStyles(() =>
   createStyles({
     section: {
-      paddingTop: '100px',
+      marginTop: '100px',
       position: 'relative',
     },
     content: {
@@ -14,11 +14,6 @@ export const useStyles = makeStyles(() =>
       '& h3': {
         marginBottom: '30px',
       },
-    },
-    loading: {
-      position: 'absolute',
-      top: 'calc(50% - 45px)',
-      left: 'calc(50% - 45px)',
     },
   })
 );
