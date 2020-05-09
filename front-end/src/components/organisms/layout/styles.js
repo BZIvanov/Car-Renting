@@ -1,8 +1,9 @@
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 
-export const useStyles = makeStyles((theme) =>
+export const useStyles = makeStyles(() =>
   createStyles({
     content: {
+      position: 'relative',
       margin: 0,
       padding: 0,
       display: 'flex',

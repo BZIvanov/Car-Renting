@@ -7,3 +7,6 @@ export const CARS_START = 'CARS_START';
 export const GET_CARS_SUCCESS = 'GET_CARS_SUCCESS';
 export const CREATE_CAR_SUCCESS = 'CREATE_CAR_SUCCESS';
 export const CARS_FAIL = 'CARS_FAIL';
+
+export const SET_ALERT = 'SET_ALERT';
+export const REMOVE_ALERT = 'REMOVE_ALERT';

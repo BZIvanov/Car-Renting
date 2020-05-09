@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as actionTypes from './actionsTypes';
+import { setAlert } from './alert';
 
 export const authStart = () => {
   return {
@@ -52,6 +53,9 @@ export const auth = (username, email, password) => {
             response.data.data.user.username,
             response.data.data.user._id
           )
+        );
+        dispatch(
+          setAlert(`Welcome ${response.data.data.user.username}`, 'success')
         );
       })
       .catch((err) => {
