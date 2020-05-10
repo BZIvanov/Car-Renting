@@ -1,6 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { NavItems, NavSearch } from '../../molecules';
+import {
+  HomeIcon,
+  DriveEtaIcon,
+  ExitToAppIcon,
+  AddCircleIcon,
+} from '../../atoms';
 import { useStyles } from './styles';
 import * as constants from '../../../constants';
 
@@ -8,14 +14,22 @@ const Header = ({ isAuthenticated }) => {
   const classes = useStyles();
 
   let linkItems = [
-    { value: 'HOME', path: constants.ROOT_PATH },
-    { value: 'VIEW AVAILABLE CARS', path: constants.ALL_AVAILABLE_CARS_PATH },
+    { value: 'HOME', path: constants.ROOT_PATH, icon: HomeIcon },
+    {
+      value: 'VIEW AVAILABLE CARS',
+      path: constants.ALL_AVAILABLE_CARS_PATH,
+      icon: DriveEtaIcon,
+    },
   ];
 
   if (isAuthenticated) {
     linkItems = linkItems.concat([
-      { value: 'ADD NEW CAR', path: constants.ADD_NEW_CAR_PATH },
-      { value: 'LOGOUT', path: constants.LOGOUT_PATH },
+      {
+        value: 'ADD NEW CAR',
+        path: constants.ADD_NEW_CAR_PATH,
+        icon: AddCircleIcon,
+      },
+      { value: 'LOGOUT', path: constants.LOGOUT_PATH, icon: ExitToAppIcon },
     ]);
   } else {
     linkItems = linkItems.concat([
