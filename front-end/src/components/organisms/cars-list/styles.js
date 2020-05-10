@@ -16,17 +16,12 @@ export const useStyles = makeStyles((theme) =>
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'center',
-      '& article': {
+      '& > a': {
         margin: '20px',
       },
     },
     pagination: {
       margin: '20px',
-    },
-    loading: {
-      position: 'absolute',
-      top: 'calc(50% - 45px)',
-      left: 'calc(50% - 45px)',
     },
   })
 );

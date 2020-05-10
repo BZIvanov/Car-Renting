@@ -13,6 +13,7 @@ export const useStyles = makeStyles((theme) =>
       display: 'flex',
       justifyContent: 'center',
       padding: '5px 0',
+      color: theme.palette.common.white,
     },
   })
 );

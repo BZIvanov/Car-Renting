@@ -3,6 +3,7 @@ import * as actionTypes from '../actions/actionsTypes';
 const initialState = {
   loading: false,
   cars: [],
+  car: {},
   page: 1,
   allCount: 0,
   success: false,
@@ -34,9 +35,18 @@ const reducer = (state = initialState, action) => {
         success: true,
         error: null,
       };
+    case actionTypes.GET_CAR_SUCCESS:
+      return {
+        ...state,
+        car: action.car,
+        loading: false,
+        error: null,
+      };
     case actionTypes.CARS_FAIL:
       return {
         ...state,
+        cars: [],
+        car: {},
         loading: false,
         error: action.error,
       };

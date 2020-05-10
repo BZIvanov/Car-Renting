@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { CarCard } from '../../molecules';
-import { Loading, Pagination } from '../../atoms';
+import { Loading, Pagination, NavLink } from '../../atoms';
 import { useStyles } from './styles';
 import * as actions from '../../../store/actions/cars';
 import { PAGE_RESULTS } from '../../../constants';
@@ -16,13 +16,13 @@ const CarsList = (props) => {
 
   let renderData = null;
   if (isLoading) {
-    renderData = (
-      <div className={classes.loading}>
-        <Loading />
-      </div>
-    );
+    renderData = <Loading />;
   } else {
-    renderData = cars.map((car) => <CarCard key={car._id} car={car} />);
+    renderData = cars.map((car) => (
+      <NavLink key={car._id} to={`/car/${car._id}`}>
+        <CarCard car={car} />
+      </NavLink>
+    ));
   }
 
   const handlePageChange = (event, value) => {

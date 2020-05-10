@@ -22,6 +22,13 @@ export const createCarSuccess = () => {
   };
 };
 
+export const getCarSuccess = (car) => {
+  return {
+    type: actionTypes.GET_CAR_SUCCESS,
+    car,
+  };
+};
+
 export const carsFail = (error) => {
   return {
     type: actionTypes.CARS_FAIL,
@@ -56,6 +63,22 @@ export const createCar = (data) => {
       })
       .then(() => {
         dispatch(createCarSuccess());
+      })
+      .catch((err) => {
+        dispatch(carsFail(err.message));
+      });
+  };
+};
+
+export const fetchCar = (id) => {
+  return (dispatch) => {
+    dispatch(carsStart());
+    axios
+      .get(`http://localhost:3100/api/cars/${id}`, {
+        withCredentials: true,
+      })
+      .then((response) => {
+        dispatch(getCarSuccess(response.data.data.car));
       })
       .catch((err) => {
         dispatch(carsFail(err.message));

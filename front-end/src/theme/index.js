@@ -29,13 +29,13 @@ export const theme = createMuiTheme({
     fontWeightBold: FONT_BOLD,
     h1: {
       fontWeight: FONT_BOLD,
-      fontSize: '4rem',
-      lineHeight: 1.3,
+      fontSize: '3.6rem',
+      lineHeight: 1.5,
       [`@media (max-width:1280px)`]: {
-        fontSize: '3rem',
+        fontSize: '2.8rem',
       },
       [`@media (max-width:960px)`]: {
-        fontSize: '2.5rem',
+        fontSize: '2.2rem',
       },
       [`@media (max-width:600px)`]: {
         fontSize: '2rem',
@@ -43,13 +43,13 @@ export const theme = createMuiTheme({
     },
     h2: {
       fontWeight: FONT_BOLD,
-      fontSize: '3rem',
-      lineHeight: 1.3,
+      fontSize: '2.8rem',
+      lineHeight: 1.4,
       [`@media (max-width:1280px)`]: {
-        fontSize: '2.5rem',
+        fontSize: '2.3rem',
       },
       [`@media (max-width:960px)`]: {
-        fontSize: '2rem',
+        fontSize: '1.8rem',
       },
       [`@media (max-width:600px)`]: {
         fontSize: '1.6rem',
@@ -57,10 +57,10 @@ export const theme = createMuiTheme({
     },
     h3: {
       fontWeight: FONT_BOLD,
-      fontSize: '2.4rem',
-      lineHeight: 1.2,
+      fontSize: '2.2rem',
+      lineHeight: 1.4,
       [`@media (max-width:1280px)`]: {
-        fontSize: '2rem',
+        fontSize: '1.8rem',
       },
       [`@media (max-width:960px)`]: {
         fontSize: '1.6rem',
@@ -71,13 +71,13 @@ export const theme = createMuiTheme({
     },
     h4: {
       fontWeight: FONT_MEDIUM,
-      fontSize: '2rem',
-      lineHeight: 1.2,
+      fontSize: '1.8rem',
+      lineHeight: 1.3,
       [`@media (max-width:1280px)`]: {
-        fontSize: '1.8rem',
+        fontSize: '1.6rem',
       },
       [`@media (max-width:960px)`]: {
-        fontSize: '1.6rem',
+        fontSize: '1.4rem',
       },
       [`@media (max-width:600px)`]: {
         fontSize: '1.2rem',
@@ -85,13 +85,13 @@ export const theme = createMuiTheme({
     },
     h5: {
       fontWeight: FONT_REGULAR,
-      fontSize: '1.8rem',
+      fontSize: '1.6rem',
       lineHeight: 1.2,
       [`@media (max-width:1280px)`]: {
-        fontSize: '1.6rem',
+        fontSize: '1.5rem',
       },
       [`@media (max-width:960px)`]: {
-        fontSize: '1.4rem',
+        fontSize: '1.3rem',
       },
       [`@media (max-width:600px)`]: {
         fontSize: '1.2rem',
@@ -99,10 +99,10 @@ export const theme = createMuiTheme({
     },
     h6: {
       fontWeight: FONT_REGULAR,
-      fontSize: '1.6rem',
+      fontSize: '1.4rem',
       lineHeight: 1.2,
       [`@media (max-width:1280px)`]: {
-        fontSize: '1.4rem',
+        fontSize: '1.3rem',
       },
       [`@media (max-width:960px)`]: {
         fontSize: '1.2rem',
@@ -114,7 +114,7 @@ export const theme = createMuiTheme({
     subtitle1: {
       fontWeight: FONT_REGULAR,
       fontSize: '1.2rem',
-      lineHeight: 1.3,
+      lineHeight: 1.2,
       [`@media (max-width:1280px)`]: {
         fontSize: '1rem',
       },

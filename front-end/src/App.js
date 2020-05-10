@@ -7,6 +7,7 @@ import {
   AddNewCar,
   Register,
   Login,
+  CarDetails,
   NotFound,
 } from './components/pages';
 import { Layout, Logout } from './components/organisms';
@@ -29,6 +30,10 @@ const App = () => {
           <PrivateRoute
             path={constants.ADD_NEW_CAR_PATH}
             component={AddNewCar}
+          />
+          <PrivateRoute
+            path={constants.CAR_DETAILS_PATH}
+            component={CarDetails}
           />
           <PrivateRoute path={constants.LOGOUT_PATH} component={Logout} />
           <Route component={NotFound} />

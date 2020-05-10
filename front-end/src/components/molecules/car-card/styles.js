@@ -8,12 +8,23 @@ export const useStyles = makeStyles((theme) =>
       justifyContent: 'space-between',
       maxWidth: '350px',
       border: `1px solid ${theme.palette.grey['A400']}`,
-      borderRadius: '20px',
+      borderTopRightRadius: '15px',
+      borderBottomLeftRadius: '15px',
       overflow: 'hidden',
+      transition: '100ms ease-in-out',
+      height: '100%',
+      '&:hover': {
+        cursor: 'pointer',
+        boxShadow: '5px 4px 10px black',
+      },
+      '&:hover img': {
+        transform: 'scale(1.01)',
+      },
     },
     imgContainer: {
       '& img': {
         width: '100%',
+        transform: 'scale(1)',
       },
     },
     carInfo: {
