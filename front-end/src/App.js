@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import {
@@ -12,9 +13,16 @@ import {
 } from './components/pages';
 import { Layout, Logout } from './components/organisms';
 import { PrivateRoute } from './components/atoms';
+import { autoSignup } from './store/actions/auth';
 import * as constants from './constants';
 
-const App = () => {
+const App = (props) => {
+  const { onTryAutoSignup } = props;
+
+  useEffect(() => {
+    onTryAutoSignup();
+  }, [onTryAutoSignup]);
+
   return (
     <BrowserRouter>
       <CssBaseline />
@@ -43,4 +51,10 @@ const App = () => {
   );
 };
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onTryAutoSignup: () => dispatch(autoSignup()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(App);

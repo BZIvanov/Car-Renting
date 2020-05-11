@@ -50,7 +50,7 @@ const Header = ({ isAuthenticated }) => {
 
 const mapStateToProps = (state) => {
   return {
-    isAuthenticated: state.users.token !== null,
+    isAuthenticated: state.users.user !== null,
   };
 };
 

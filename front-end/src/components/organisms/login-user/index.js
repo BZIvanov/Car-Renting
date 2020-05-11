@@ -30,7 +30,7 @@ const LoginUser = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isAuthenticated: state.users.token !== null,
+    isAuthenticated: state.users.user !== null,
     isLoading: state.users.loading,
   };
 };

@@ -8,7 +8,7 @@ const PrivateRoute = ({ component: Component, auth, ...rest }) => {
     <Route
       {...rest}
       render={(props) =>
-        auth.token !== null && !auth.loading ? (
+        auth.user !== null && !auth.loading ? (
           <Component {...props} />
         ) : (
           <Redirect to={ROOT_PATH} />

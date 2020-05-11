@@ -8,11 +8,13 @@ export const authStart = () => {
   };
 };
 
-export const authSuccess = (username, token) => {
+export const authSuccess = (user) => {
+  const userData = JSON.stringify(user);
+  localStorage.setItem('user', userData);
+
   return {
     type: actionTypes.AUTH_SUCCESS,
-    username,
-    token,
+    user,
   };
 };
 
@@ -48,9 +50,7 @@ export const auth = (username, email, password) => {
         }
       )
       .then((response) => {
-        dispatch(
-          authSuccess(response.data.data.user.username, response.data.token)
-        );
+        dispatch(authSuccess(response.data.data.user));
         dispatch(
           setAlert(`Welcome ${response.data.data.user.username}`, 'success')
         );
@@ -70,10 +70,20 @@ export const logout = () => {
         withCredentials: true,
       })
       .then(() => {
+        localStorage.removeItem('user');
         dispatch(authLogout());
       })
       .catch((err) => {
         dispatch(authFail(err.message));
       });
   };
+};
+
+export const autoSignup = () => {
+  const user = localStorage.getItem('user');
+
+  if (!user) {
+    return authLogout();
+  }
+  return authSuccess(JSON.parse(user));
 };
