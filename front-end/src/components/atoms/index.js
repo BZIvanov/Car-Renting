@@ -7,5 +7,6 @@ export { default as Alert } from './alert';
 export { default as TextField } from './text-field';
 export { default as Loading } from './loading';
 export { default as ShadowCover } from './shadow-cover';
+export { default as ImageCover } from './image-cover';
 export { default as PrivateRoute } from './private-route';
 export * from './icons';

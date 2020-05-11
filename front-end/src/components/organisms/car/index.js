@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { Loading } from '../../atoms';
+import { Loading, ImageCover } from '../../atoms';
+import { CarDetails } from '../../molecules';
 import { useStyles } from './styles';
 import * as actions from '../../../store/actions/cars';
 
@@ -16,7 +17,10 @@ const Car = (props) => {
   return (
     <section className={classes.section}>
       {isLoading && <Loading />}
-      <img src={car.image} alt="Rent a car" />
+      <div className={classes.content}>
+        <ImageCover image={car.image} />
+        <CarDetails car={car} />
+      </div>
     </section>
   );
 };

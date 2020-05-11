@@ -29,7 +29,7 @@ export const theme = createMuiTheme({
     fontWeightBold: FONT_BOLD,
     h1: {
       fontWeight: FONT_BOLD,
-      fontSize: '3.6rem',
+      fontSize: '3.2rem',
       lineHeight: 1.5,
       [`@media (max-width:1280px)`]: {
         fontSize: '2.8rem',
@@ -43,10 +43,10 @@ export const theme = createMuiTheme({
     },
     h2: {
       fontWeight: FONT_BOLD,
-      fontSize: '2.8rem',
+      fontSize: '2.6rem',
       lineHeight: 1.4,
       [`@media (max-width:1280px)`]: {
-        fontSize: '2.3rem',
+        fontSize: '2.2rem',
       },
       [`@media (max-width:960px)`]: {
         fontSize: '1.8rem',

@@ -4,3 +4,4 @@ export { default as RegisterForm } from './register-form';
 export { default as LoginForm } from './login-form';
 export { default as CreateCarForm } from './create-car-form';
 export { default as CarCard } from './car-card';
+export { default as CarDetails } from './car-details';

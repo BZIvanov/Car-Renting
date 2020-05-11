@@ -6,5 +6,21 @@ export const useStyles = makeStyles((theme) =>
       maxWidth: theme.breakpoints.values.lg,
       margin: '0 auto',
     },
+    content: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: '120px',
+      borderRadius: '12px',
+      boxShadow: '0 0 15px gray',
+      overflow: 'hidden',
+      '& > div': {
+        width: '50%',
+      },
+      '& div:first-of-type': {
+        minHeight: '450px',
+        marginRight: '35px',
+      },
+    },
   })
 );
