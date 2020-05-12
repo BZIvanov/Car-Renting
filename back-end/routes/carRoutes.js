@@ -13,4 +13,6 @@ router
   .patch(authController.protect, carsController.updateCar)
   .delete(authController.protect, carsController.deleteCar);
 
+router.route('/rent').post(authController.protect, carsController.rentCar);
+
 module.exports = router;

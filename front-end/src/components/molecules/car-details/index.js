@@ -3,7 +3,7 @@ import { Typography, PrimaryButton } from '../../atoms';
 import { useStyles } from './styles';
 
 const CarDetails = (props) => {
-  const { car, onRentClick } = props;
+  const { car, onRentToggle } = props;
   const classes = useStyles();
 
   return (
@@ -24,7 +24,7 @@ const CarDetails = (props) => {
         <span>Price per day:</span>
         {car.pricePerDay.toFixed(2)}
       </Typography>
-      <PrimaryButton onClick={onRentClick}>RENT IT</PrimaryButton>
+      <PrimaryButton onClick={onRentToggle}>RENT IT</PrimaryButton>
     </div>
   );
 };

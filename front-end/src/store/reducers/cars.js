@@ -42,6 +42,12 @@ const reducer = (state = initialState, action) => {
         loading: false,
         error: null,
       };
+    case actionTypes.RENT_CAR_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        error: null,
+      };
     case actionTypes.CARS_FAIL:
       return {
         ...state,

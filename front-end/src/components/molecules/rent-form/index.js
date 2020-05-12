@@ -5,13 +5,14 @@ import { TextField, PrimaryButton, SecondaryButton } from '../../atoms';
 import { useStyles } from './styles';
 
 const RentForm = (props) => {
+  const { car, onRentCar, onRentToggle } = props;
   const classes = useStyles();
   const { register, handleSubmit, errors } = useForm({
     validationSchema: SignupSchema,
   });
 
   const onSubmit = (data) => {
-    props.auth(data.username, data.email, data.password);
+    onRentCar(car._id, data.days);
   };
 
   return (
@@ -22,12 +23,15 @@ const RentForm = (props) => {
         error={errors.days && errors.days.message.length > 0}
         helperText={errors.days && errors.days.message}
         label="Days"
+        type="number"
         fullWidth
       />
       <PrimaryButton variant="contained" color="primary" type="submit">
         RENT!
       </PrimaryButton>
-      <SecondaryButton type="button">Cancel</SecondaryButton>
+      <SecondaryButton type="button" onClick={onRentToggle}>
+        Cancel
+      </SecondaryButton>
     </form>
   );
 };

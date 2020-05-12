@@ -76,3 +76,11 @@ exports.deleteCar = catchAsync(async (req, res, next) => {
     data: null,
   });
 });
+
+exports.rentCar = catchAsync(async (req, res, next) => {
+  console.log(req.body);
+
+  res.status(204).json({
+    status: 'success',
+  });
+});
