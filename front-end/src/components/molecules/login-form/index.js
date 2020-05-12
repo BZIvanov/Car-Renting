@@ -1,8 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { SignupSchema } from './schema';
-import Button from '@material-ui/core/Button';
-import { TextField } from '../../atoms';
+import { TextField, PrimaryButton } from '../../atoms';
 import { useStyles } from './styles';
 
 const LoginForm = (props) => {
@@ -33,9 +32,9 @@ const LoginForm = (props) => {
         label="Password"
         fullWidth
       />
-      <Button variant="contained" color="primary" type="submit">
+      <PrimaryButton variant="contained" color="primary" type="submit">
         Login
-      </Button>
+      </PrimaryButton>
     </form>
   );
 };

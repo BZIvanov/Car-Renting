@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Loading, ImageCover } from '../../atoms';
@@ -8,6 +8,7 @@ import * as actions from '../../../store/actions/cars';
 
 const Car = (props) => {
   const { isLoading, car, onFetchCar, match } = props;
+  const [showForm, setShowForm] = useState(false);
   const classes = useStyles();
 
   useEffect(() => {
@@ -17,10 +18,12 @@ const Car = (props) => {
   return (
     <section className={classes.section}>
       {isLoading && <Loading />}
-      <div className={classes.content}>
-        <ImageCover image={car.image} />
-        <CarDetails car={car} />
-      </div>
+      {car && (
+        <div className={classes.content}>
+          <ImageCover image={car.image} />
+          <CarDetails car={car} onRentClick={() => setShowForm(!showForm)} />
+        </div>
+      )}
     </section>
   );
 };

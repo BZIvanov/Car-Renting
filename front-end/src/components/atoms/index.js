@@ -10,3 +10,4 @@ export { default as ShadowCover } from './shadow-cover';
 export { default as ImageCover } from './image-cover';
 export { default as PrivateRoute } from './private-route';
 export * from './icons';
+export * from './buttons';

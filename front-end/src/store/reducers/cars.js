@@ -3,7 +3,7 @@ import * as actionTypes from '../actions/actionsTypes';
 const initialState = {
   loading: false,
   cars: [],
-  car: {},
+  car: null,
   page: 1,
   allCount: 0,
   success: false,

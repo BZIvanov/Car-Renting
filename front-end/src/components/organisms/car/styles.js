@@ -10,7 +10,7 @@ export const useStyles = makeStyles((theme) =>
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      marginTop: '120px',
+      margin: '120px 25px',
       borderRadius: '12px',
       boxShadow: '0 0 15px gray',
       overflow: 'hidden',

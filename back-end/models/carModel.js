@@ -65,6 +65,11 @@ const carSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  creator: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User',
+    required: [true, 'Car must belong to a user'],
+  },
   expiresOn: {
     type: Date,
   },

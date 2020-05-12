@@ -2,8 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import { SignupSchema } from './schema';
-import Button from '@material-ui/core/Button';
-import { TextField } from '../../atoms';
+import { TextField, PrimaryButton } from '../../atoms';
 import { useStyles } from './styles';
 
 const CreateCarForm = (props) => {
@@ -63,9 +62,9 @@ const CreateCarForm = (props) => {
           startAdornment: <InputAdornment position="start">Lv.</InputAdornment>,
         }}
       />
-      <Button variant="contained" color="primary" type="submit">
+      <PrimaryButton variant="contained" color="primary" type="submit">
         ADD CAR
-      </Button>
+      </PrimaryButton>
     </form>
   );
 };
