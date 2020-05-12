@@ -1,4 +1,5 @@
 const Car = require('../models/carModel');
+const Rent = require('../models/rentModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const APIFeatures = require('../utils/apiFeatures');
@@ -78,9 +79,23 @@ exports.deleteCar = catchAsync(async (req, res, next) => {
 });
 
 exports.rentCar = catchAsync(async (req, res, next) => {
-  console.log(req.body);
+  const rentData = {
+    owner: req.user._id,
+    car: req.body.id,
+    days: req.body.days,
+  };
 
-  res.status(204).json({
+  const car = await Car.findById(req.body.id);
+  if (!car || car.isRented) {
+    return next(new AppError('The car is not existing or already rented', 404));
+  }
+
+  await Car.findByIdAndUpdate(req.body.id, { isRented: true });
+
+  await Rent.create(rentData);
+
+  res.status(201).json({
     status: 'success',
+    data: null,
   });
 });

@@ -70,9 +70,6 @@ const carSchema = new mongoose.Schema({
     ref: 'User',
     required: [true, 'Car must belong to a user'],
   },
-  expiresOn: {
-    type: Date,
-  },
 });
 
 const Car = mongoose.model('Car', carSchema);

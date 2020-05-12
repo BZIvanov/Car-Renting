@@ -104,6 +104,7 @@ export const rentCar = (carId, days) => {
         withCredentials: true,
       })
       .then((response) => {
+        console.log(response);
         dispatch(rentCarSuccess());
       })
       .catch((err) => {

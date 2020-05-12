@@ -51,8 +51,6 @@ const reducer = (state = initialState, action) => {
     case actionTypes.CARS_FAIL:
       return {
         ...state,
-        cars: [],
-        car: {},
         loading: false,
         error: action.error,
       };
