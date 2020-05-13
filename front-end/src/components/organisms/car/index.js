@@ -4,10 +4,11 @@ import { withRouter } from 'react-router-dom';
 import { Loading, ImageCover } from '../../atoms';
 import { CarDetails, RentForm } from '../../molecules';
 import { useStyles } from './styles';
-import * as actions from '../../../store/actions/cars';
+import { rentCar } from '../../../store/actions/rent';
+import { fetchCar } from '../../../store/actions/cars';
 
 const Car = (props) => {
-  const { isLoading, car, onFetchCar, onRentCar, match } = props;
+  const { isLoading, car, onFetchCar, onRentCar, history, match } = props;
   const [showForm, setShowForm] = useState(false);
   const classes = useStyles();
 
@@ -20,7 +21,7 @@ const Car = (props) => {
       {showForm && (
         <RentForm
           car={car}
-          onRentCar={onRentCar}
+          onRentCar={(id, days) => onRentCar(id, days, history)}
           onRentToggle={() => setShowForm(!showForm)}
         />
       )}
@@ -39,13 +40,15 @@ const mapStateToProps = (state) => {
   return {
     isLoading: state.cars.loading,
     car: state.cars.car,
+    isSuccess: state.rents.success,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onFetchCar: (id) => dispatch(actions.fetchCar(id)),
-    onRentCar: (carId, days) => dispatch(actions.rentCar(carId, days)),
+    onFetchCar: (id) => dispatch(fetchCar(id)),
+    onRentCar: (carId, days, history) =>
+      dispatch(rentCar(carId, days, history)),
   };
 };
 

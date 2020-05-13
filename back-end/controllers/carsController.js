@@ -5,7 +5,11 @@ const AppError = require('../utils/appError');
 const APIFeatures = require('../utils/apiFeatures');
 
 exports.addCar = catchAsync(async (req, res, next) => {
-  const newCar = await Car.create(req.body);
+  const carData = {
+    ...req.body,
+    creator: req.user._id,
+  };
+  const newCar = await Car.create(carData);
 
   res.status(201).json({
     status: 'success',
@@ -16,7 +20,7 @@ exports.addCar = catchAsync(async (req, res, next) => {
 });
 
 exports.getAll = catchAsync(async (req, res, next) => {
-  const allCarsCount = await Car.countDocuments();
+  const allCarsCount = await Car.countDocuments({ isRented: false });
   const filters = new APIFeatures(Car.find({ isRented: false }), req.query)
     .sort()
     .limitFields()

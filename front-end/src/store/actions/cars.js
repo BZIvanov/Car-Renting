@@ -36,12 +36,6 @@ export const carsFail = (error) => {
   };
 };
 
-export const rentCarSuccess = () => {
-  return {
-    type: actionTypes.RENT_CAR_SUCCESS,
-  };
-};
-
 export const fetchCars = (page = 1) => {
   return (dispatch) => {
     dispatch(carsStart());
@@ -72,6 +66,7 @@ export const createCar = (data) => {
       })
       .catch((err) => {
         dispatch(carsFail(err.message));
+        console.dir(err);
       });
   };
 };
@@ -85,27 +80,6 @@ export const fetchCar = (id) => {
       })
       .then((response) => {
         dispatch(getCarSuccess(response.data.data.car));
-      })
-      .catch((err) => {
-        dispatch(carsFail(err.message));
-      });
-  };
-};
-
-export const rentCar = (carId, days) => {
-  const data = {
-    id: carId,
-    days,
-  };
-  return (dispatch) => {
-    dispatch(carsStart());
-    axios
-      .post('http://localhost:3100/api/cars/rent', data, {
-        withCredentials: true,
-      })
-      .then((response) => {
-        console.log(response);
-        dispatch(rentCarSuccess());
       })
       .catch((err) => {
         dispatch(carsFail(err.message));
