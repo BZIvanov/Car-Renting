@@ -9,7 +9,7 @@ const NavItems = (props) => {
     <ul className={classes.listItems}>
       {props.links.map((link) => (
         <li key={link.value}>
-          <NavLink to={link.path}>
+          <NavLink to={link.path} exact activeClassName={classes.activeLink}>
             {link.icon && <link.icon fontSize="small" />}
             {link.value}
           </NavLink>

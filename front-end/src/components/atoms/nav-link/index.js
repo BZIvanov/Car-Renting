@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink as NL } from 'react-router-dom';
 import { useStyles } from './styles';
 
-const Typography = (props) => {
+const NavLink = (props) => {
   const classes = useStyles();
 
   return (
@@ -12,4 +12,4 @@ const Typography = (props) => {
   );
 };
 
-export default Typography;
+export default NavLink;
