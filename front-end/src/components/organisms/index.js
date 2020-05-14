@@ -1,4 +1,5 @@
 export { default as Layout } from './layout';
+export { default as AppRoutes } from './app-routes';
 export { default as Header } from './header';
 export { default as Landing } from './landing';
 export { default as NewUser } from './register-user';
