@@ -2,8 +2,7 @@ import React from 'react';
 import { Typography } from '../../atoms';
 import { useStyles } from './styles';
 
-const CarCard = (props) => {
-  const { car } = props;
+const CarCard = ({ car }) => {
   const classes = useStyles();
 
   return (

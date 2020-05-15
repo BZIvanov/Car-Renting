@@ -4,14 +4,14 @@ import { SignupSchema } from './schema';
 import { TextField, PrimaryButton } from '../../atoms';
 import { useStyles } from './styles';
 
-const LoginForm = (props) => {
+const LoginForm = ({ auth }) => {
   const classes = useStyles();
   const { register, handleSubmit, errors } = useForm({
     validationSchema: SignupSchema,
   });
 
   const onSubmit = (data) => {
-    props.auth(null, data.email, data.password);
+    auth(null, data.email, data.password);
   };
 
   return (

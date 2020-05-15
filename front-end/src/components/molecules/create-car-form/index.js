@@ -5,14 +5,14 @@ import { SignupSchema } from './schema';
 import { TextField, PrimaryButton } from '../../atoms';
 import { useStyles } from './styles';
 
-const CreateCarForm = (props) => {
+const CreateCarForm = ({ addCar }) => {
   const classes = useStyles();
   const { register, handleSubmit, errors } = useForm({
     validationSchema: SignupSchema,
   });
 
   const onSubmit = (data) => {
-    props.addCar(data);
+    addCar(data);
   };
 
   return (

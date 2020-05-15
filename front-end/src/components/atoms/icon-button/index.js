@@ -1,8 +1,8 @@
 import React from 'react';
 import { IconButton as IB } from '@material-ui/core';
 
-const IconButton = (props) => {
-  return <IB {...props}>{props.children}</IB>;
+const IconButton = ({ children, ...rest }) => {
+  return <IB {...rest}>{children}</IB>;
 };
 
 export default IconButton;

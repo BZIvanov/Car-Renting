@@ -2,12 +2,12 @@ import React from 'react';
 import { NavLink as NL } from 'react-router-dom';
 import { useStyles } from './styles';
 
-const NavLink = (props) => {
+const NavLink = ({ children, ...rest }) => {
   const classes = useStyles();
 
   return (
-    <NL {...props} className={classes.navItem}>
-      {props.children}
+    <NL {...rest} className={classes.navItem}>
+      {children}
     </NL>
   );
 };
