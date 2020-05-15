@@ -4,6 +4,7 @@ import {
   Home,
   AvailableCars,
   AddNewCar,
+  EditYouCar,
   Register,
   Login,
   CarDetails,
@@ -21,6 +22,7 @@ const AppRoutes = () => (
     <Route path={constants.LOGIN_PATH} component={Login} />
     <PrivateRoute path={constants.ADD_NEW_CAR_PATH} component={AddNewCar} />
     <PrivateRoute path={constants.CAR_DETAILS_PATH} component={CarDetails} />
+    <PrivateRoute path={constants.EDIT_CAR_PATH} component={EditYouCar} />
     <PrivateRoute path={constants.LOGOUT_PATH} component={Logout} />
     <Route component={NotFound} />
   </Switch>

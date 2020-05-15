@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, PrimaryButton } from '../../atoms';
+import { Typography, PrimaryButton, Link } from '../../atoms';
 import { useStyles } from './styles';
 
 const CarDetails = (props) => {
@@ -25,6 +25,7 @@ const CarDetails = (props) => {
         {car.pricePerDay.toFixed(2)}
       </Typography>
       <PrimaryButton onClick={onRentToggle}>RENT IT</PrimaryButton>
+      <Link to={`/edit-car/${car._id}`}>Edit car</Link>
     </div>
   );
 };

@@ -71,6 +71,23 @@ export const createCar = (data) => {
   };
 };
 
+export const editCar = (id, data) => {
+  return (dispatch) => {
+    dispatch(carsStart());
+    axios
+      .patch(`http://localhost:3100/api/cars/${id}`, data, {
+        withCredentials: true,
+      })
+      .then(() => {
+        dispatch(createCarSuccess());
+      })
+      .catch((err) => {
+        dispatch(carsFail(err.message));
+        console.dir(err);
+      });
+  };
+};
+
 export const fetchCar = (id) => {
   return (dispatch) => {
     dispatch(carsStart());

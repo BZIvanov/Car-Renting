@@ -5,6 +5,7 @@ export const LOGIN_PATH = '/login';
 export const LOGOUT_PATH = '/logout';
 export const ALL_AVAILABLE_CARS_PATH = '/all-available-cars';
 export const ADD_NEW_CAR_PATH = '/add-new-car';
+export const EDIT_CAR_PATH = '/edit-car/:id';
 export const CAR_DETAILS_PATH = '/car/:id';
 export const PAGE_RESULTS = 12;
 

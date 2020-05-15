@@ -4,14 +4,14 @@ import { SignupSchema } from './schema';
 import { TextField, PrimaryButton, InputAdornment } from '../../atoms';
 import { useStyles } from './styles';
 
-const CreateCarForm = ({ addCar }) => {
+const EditCarForm = ({ car, addCar }) => {
   const classes = useStyles();
   const { register, handleSubmit, errors } = useForm({
     validationSchema: SignupSchema,
   });
 
   const onSubmit = (data) => {
-    addCar(data);
+    addCar(car._id, data);
   };
 
   return (
@@ -19,6 +19,7 @@ const CreateCarForm = ({ addCar }) => {
       <TextField
         name="model"
         inputRef={register}
+        defaultValue={car.model}
         error={errors.model && errors.model.message.length > 0}
         helperText={errors.model && errors.model.message}
         label="Car model"
@@ -27,6 +28,7 @@ const CreateCarForm = ({ addCar }) => {
       <TextField
         name="image"
         inputRef={register}
+        defaultValue={car.image}
         error={errors.image && errors.image.message.length > 0}
         helperText={errors.image && errors.image.message}
         label="Image URL"
@@ -36,6 +38,7 @@ const CreateCarForm = ({ addCar }) => {
         name="year"
         type="number"
         inputRef={register}
+        defaultValue={car.year}
         error={errors.year && errors.year.message.length > 0}
         helperText={errors.year && errors.year.message}
         label="Year made"
@@ -44,6 +47,7 @@ const CreateCarForm = ({ addCar }) => {
       <TextField
         name="city"
         inputRef={register}
+        defaultValue={car.city}
         error={errors.city && errors.city.message.length > 0}
         helperText={errors.city && errors.city.message}
         label="City"
@@ -53,6 +57,7 @@ const CreateCarForm = ({ addCar }) => {
         name="pricePerDay"
         type="number"
         inputRef={register}
+        defaultValue={car.pricePerDay}
         error={errors.pricePerDay && errors.pricePerDay.message.length > 0}
         helperText={errors.pricePerDay && errors.pricePerDay.message}
         label="Price per day"
@@ -62,10 +67,10 @@ const CreateCarForm = ({ addCar }) => {
         }}
       />
       <PrimaryButton variant="contained" color="primary" type="submit">
-        ADD CAR
+        EDIT CAR
       </PrimaryButton>
     </form>
   );
 };
 
-export default CreateCarForm;
+export default EditCarForm;
