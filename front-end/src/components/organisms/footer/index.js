@@ -1,4 +1,5 @@
 import React from 'react';
+import { Typography } from '../../atoms';
 import { useStyles } from './styles';
 
 const Footer = () => {
@@ -7,8 +8,10 @@ const Footer = () => {
   return (
     <footer className={classes.footer}>
       <div className={classes.content}>
-        &copy; {new Date().getFullYear()} Rent A Car Service Ltd. All Rights
-        Reserved
+        <Typography varinat="subtitle1">
+          &copy; {new Date().getFullYear()} Rent A Car Service Ltd. All Rights
+          Reserved
+        </Typography>
       </div>
     </footer>
   );

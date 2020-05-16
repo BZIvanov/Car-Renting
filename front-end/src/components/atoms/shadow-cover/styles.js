@@ -15,6 +15,8 @@ export const useStyles = makeStyles((theme) =>
         marginLeft: '0',
         alignItems: 'center',
         paddingLeft: '0',
+        paddingTop: '100px',
+        justifyContent: 'flex-start',
       },
     },
   })

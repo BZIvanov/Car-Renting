@@ -1,10 +1,12 @@
 import { createStyles, makeStyles } from '@material-ui/core/styles';
-import image from '../../../static/images/home-image.jpg';
+import desktopImage from '../../../static/images/home-desktop.jpg';
+import tabletImage from '../../../static/images/home-tablet.jpeg';
+import mobileImage from '../../../static/images/home-mobile.jpeg';
 
-export const useStyles = makeStyles(() =>
+export const useStyles = makeStyles((theme) =>
   createStyles({
     content: {
-      backgroundImage: `url(${image})`,
+      backgroundImage: `url(${desktopImage})`,
       backgroundPosition: 'center center',
       backgroundRepeat: 'no-repeat',
       backgroundAttachment: 'fixed',
@@ -16,6 +18,12 @@ export const useStyles = makeStyles(() =>
       },
       '& h3': {
         textShadow: '0 0 3px white',
+      },
+      [theme.breakpoints.down('sm')]: {
+        backgroundImage: `url(${tabletImage})`,
+      },
+      [theme.breakpoints.down('xs')]: {
+        backgroundImage: `url(${mobileImage})`,
       },
     },
   })

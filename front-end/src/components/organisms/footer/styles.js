@@ -10,6 +10,8 @@ export const useStyles = makeStyles((theme) =>
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+      textAlign: 'center',
+      padding: '0 15px',
       color: theme.palette.common.white,
       fontSize: 16,
       lineHeight: 1.5,
