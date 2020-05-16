@@ -10,8 +10,9 @@ export const useStyles = makeStyles((theme) =>
       '& li': {
         listStyle: 'none',
         padding: '10px 20px',
-        '& a': {
+        '& h6': {
           display: 'flex',
+          alignItems: 'center',
           '& svg': {
             marginRight: '5px',
           },

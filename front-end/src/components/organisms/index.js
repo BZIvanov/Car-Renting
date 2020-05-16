@@ -8,5 +8,6 @@ export { default as NewCar } from './new-car';
 export { default as EditCar } from './edit-car';
 export { default as Car } from './car';
 export { default as CarsList } from './cars-list';
+export { default as Filters } from './filters';
 export { default as Logout } from './logout';
 export { default as Footer } from './footer';

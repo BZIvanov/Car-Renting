@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from '../../atoms';
+import { NavLink, Typography } from '../../atoms';
 import { useStyles } from './styles';
 
 const NavItems = ({ links }) => {
@@ -10,8 +10,10 @@ const NavItems = ({ links }) => {
       {links.map((link) => (
         <li key={link.value}>
           <NavLink to={link.path} exact activeClassName={classes.activeLink}>
-            {link.icon && <link.icon fontSize="small" />}
-            {link.value}
+            <Typography variant="h6">
+              {link.icon && <link.icon fontSize="small" />}
+              {link.value}
+            </Typography>
           </NavLink>
         </li>
       ))}

@@ -30,16 +30,14 @@ const CarsList = (props) => {
   };
 
   return (
-    <section className={classes.section}>
-      <div className={classes.content}>
-        <div className={classes.cars}>{renderData}</div>
-        <div className={classes.pagination}>
-          <Pagination
-            count={Math.ceil(allCount / PAGE_RESULTS)}
-            page={page}
-            onChange={handlePageChange}
-          />
-        </div>
+    <section className={classes.content}>
+      <div className={classes.cars}>{renderData}</div>
+      <div className={classes.pagination}>
+        <Pagination
+          count={Math.ceil(allCount / PAGE_RESULTS)}
+          page={page}
+          onChange={handlePageChange}
+        />
       </div>
     </section>
   );

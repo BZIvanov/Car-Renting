@@ -1,48 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { NavItems, NavSearch } from '../../molecules';
-import {
-  HomeIcon,
-  DriveEtaIcon,
-  ExitToAppIcon,
-  AddCircleIcon,
-} from '../../atoms';
+import { NavItems } from '../../molecules';
 import { useStyles } from './styles';
-import * as constants from '../../../constants';
+import {
+  commonLinks,
+  authenticatedLinks,
+  nonAuthenticatedLinks,
+} from './linksData';
 
 const Header = ({ isAuthenticated }) => {
   const classes = useStyles();
 
-  let linkItems = [
-    { value: 'HOME', path: constants.ROOT_PATH, icon: HomeIcon },
-    {
-      value: 'VIEW AVAILABLE CARS',
-      path: constants.ALL_AVAILABLE_CARS_PATH,
-      icon: DriveEtaIcon,
-    },
-  ];
-
+  let links = commonLinks;
   if (isAuthenticated) {
-    linkItems = linkItems.concat([
-      {
-        value: 'ADD NEW CAR',
-        path: constants.ADD_NEW_CAR_PATH,
-        icon: AddCircleIcon,
-      },
-      { value: 'LOGOUT', path: constants.LOGOUT_PATH, icon: ExitToAppIcon },
-    ]);
+    links = links.concat(authenticatedLinks);
   } else {
-    linkItems = linkItems.concat([
-      { value: 'SIGN UP', path: constants.SIGNUP_PATH },
-      { value: 'LOG IN', path: constants.LOGIN_PATH },
-    ]);
+    links = links.concat(nonAuthenticatedLinks);
   }
 
   return (
     <header className={classes.header}>
       <nav className={classes.navigation}>
-        <NavItems links={linkItems} />
-        <NavSearch />
+        <NavItems links={links} />
       </nav>
     </header>
   );

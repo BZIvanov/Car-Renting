@@ -6,7 +6,7 @@ export const useStyles = makeStyles((theme) =>
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
-      maxWidth: '350px',
+      maxWidth: '310px',
       border: `1px solid ${theme.palette.grey['A400']}`,
       borderTopRightRadius: '15px',
       borderBottomLeftRadius: '15px',

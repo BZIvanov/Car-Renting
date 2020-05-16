@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { SearchIcon, InputBase, IconButton } from '../../atoms';
 import { useStyles } from './styles';
 
-const NavSearch = () => {
+const Search = () => {
   const classes = useStyles();
   const { register, handleSubmit } = useForm();
 
@@ -29,4 +29,4 @@ const NavSearch = () => {
   );
 };
 
-export default NavSearch;
+export default Search;

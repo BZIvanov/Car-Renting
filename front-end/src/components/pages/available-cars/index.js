@@ -1,8 +1,16 @@
 import React from 'react';
-import { CarsList } from '../../organisms';
+import { Filters, CarsList } from '../../organisms';
+import { useStyles } from './styles';
 
 const AvailableCars = () => {
-  return <CarsList />;
+  const classes = useStyles();
+
+  return (
+    <div className={classes.wrapper}>
+      <Filters />
+      <CarsList />
+    </div>
+  );
 };
 
 export default AvailableCars;
