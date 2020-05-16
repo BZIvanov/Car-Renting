@@ -14,10 +14,10 @@ export const useStyles = makeStyles((theme) =>
       zIndex: 1400,
       backgroundColor: theme.palette.background.paper,
       '& button': {
-        marginTop: '30px',
+        marginTop: '2rem',
       },
       '& div.MuiFormControl-root': {
-        marginBottom: '15px',
+        marginBottom: '1rem',
       },
     },
   })

@@ -13,11 +13,11 @@ export const useStyles = makeStyles((theme) =>
       flexWrap: 'wrap',
       justifyContent: 'center',
       '& > a': {
-        margin: '20px',
+        margin: '1.3rem',
       },
     },
     pagination: {
-      margin: '20px',
+      margin: '1.3rem',
     },
   })
 );

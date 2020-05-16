@@ -9,10 +9,10 @@ export const useStyles = makeStyles(() =>
       alignItems: 'center',
       width: '300px',
       '& button': {
-        marginTop: '30px',
+        marginTop: '2rem',
       },
       '& div.MuiFormControl-root': {
-        marginBottom: '15px',
+        marginBottom: '1rem',
       },
     },
   })

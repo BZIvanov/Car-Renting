@@ -14,7 +14,7 @@ export const useStyles = makeStyles((theme) =>
           display: 'flex',
           alignItems: 'center',
           '& svg': {
-            marginRight: '5px',
+            marginRight: '0.5rem',
           },
         },
       },

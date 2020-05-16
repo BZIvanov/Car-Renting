@@ -12,7 +12,7 @@ export const useStyles = makeStyles(() =>
       justifyContent: 'center',
       alignItems: 'center',
       '& h3': {
-        marginBottom: '30px',
+        marginBottom: '2rem',
       },
     },
   })

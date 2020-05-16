@@ -13,7 +13,7 @@ export const useStyles = makeStyles((theme) =>
       backgroundSize: 'cover',
       height: 'calc(100vh - 120px)',
       '& h1': {
-        marginBottom: '20px',
+        marginBottom: '1.5rem',
         textShadow: '0 0 5px black',
       },
       '& h3': {

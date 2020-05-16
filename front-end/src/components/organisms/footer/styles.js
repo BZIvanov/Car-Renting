@@ -11,7 +11,7 @@ export const useStyles = makeStyles((theme) =>
       justifyContent: 'center',
       alignItems: 'center',
       textAlign: 'center',
-      padding: '0 15px',
+      padding: '0 1rem',
       color: theme.palette.common.white,
       fontSize: 16,
       lineHeight: 1.5,

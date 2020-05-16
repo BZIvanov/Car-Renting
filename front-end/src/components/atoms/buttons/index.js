@@ -13,13 +13,13 @@ const StyledButton = withStyles((theme) => ({
 export const PrimaryButton = withStyles((theme) => ({
   root: {
     padding: theme.spacing(1, 2.5),
-    fontSize: 18,
+    fontSize: '1.2rem',
     borderRadius: '22px',
     '&:hover': {
       backgroundColor: theme.palette.background.paper,
     },
     [theme.breakpoints.down('sm')]: {
-      fontSize: 16,
+      fontSize: '1rem',
       padding: theme.spacing(1, 2),
       lineHeight: 1.5,
     },
@@ -29,18 +29,18 @@ export const PrimaryButton = withStyles((theme) => ({
 export const SecondaryButton = withStyles((theme) => ({
   root: {
     padding: theme.spacing(1, 4.5),
-    fontSize: 24,
+    fontSize: '1.1rem',
     borderRadius: '30px',
     '&:hover': {
       backgroundColor: theme.palette.background.paper,
     },
     [theme.breakpoints.down('sm')]: {
       padding: theme.spacing(1, 3.5),
-      fontSize: 20,
+      fontSize: '0.9rem',
       lineHeight: 1.5,
     },
     [theme.breakpoints.down('xs')]: {
-      fontSize: 18,
+      fontSize: '0.8rem',
     },
   },
 }))(StyledButton);

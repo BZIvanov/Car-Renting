@@ -5,7 +5,7 @@ export const useStyles = makeStyles((theme) =>
     navItem: {
       color: 'inherit',
       textDecoration: 'none',
-      fontSize: 16,
+      fontSize: '1rem',
       lineHeight: 1.5,
       fontWeight: theme.typography.fontWeightBold,
     },

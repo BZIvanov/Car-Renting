@@ -9,7 +9,7 @@ export const useStyles = makeStyles((theme) =>
       '& span': {
         fontSize: '1.2rem',
         fontWeight: theme.typography.fontWeightRegular,
-        marginRight: '15px',
+        marginRight: '1rem',
       },
     },
   })
