@@ -6,12 +6,12 @@ export const useStyles = makeStyles((theme) =>
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      height: '60px',
       backgroundColor: theme.palette.background.darkGray,
     },
     navigation: {
       display: 'flex',
       justifyContent: 'center',
+      margin: '5px 0',
       padding: '5px 0',
       color: theme.palette.common.white,
     },

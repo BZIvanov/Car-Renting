@@ -1,10 +1,11 @@
 import React from 'react';
 import { Search } from '../../molecules';
+import { Typography } from '../../atoms';
 
 const Filters = () => {
   return (
     <div>
-      <h1>Filters</h1>
+      <Typography variant="h2">Filters</Typography>
       <Search />
     </div>
   );

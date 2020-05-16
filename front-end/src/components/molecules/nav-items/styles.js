@@ -22,5 +22,10 @@ export const useStyles = makeStyles((theme) =>
     activeLink: {
       color: theme.palette.info.light,
     },
+    text: {
+      [theme.breakpoints.down('xs')]: {
+        display: 'none',
+      },
+    },
   })
 );

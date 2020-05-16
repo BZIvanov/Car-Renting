@@ -12,7 +12,7 @@ const NavItems = ({ links }) => {
           <NavLink to={link.path} exact activeClassName={classes.activeLink}>
             <Typography variant="h6">
               {link.icon && <link.icon fontSize="small" />}
-              {link.value}
+              <span className={classes.text}>{link.value}</span>
             </Typography>
           </NavLink>
         </li>
