@@ -1,6 +1,6 @@
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 
-export const useStyles = makeStyles(() =>
+export const useStyles = makeStyles((theme) =>
   createStyles({
     section: {
       marginTop: '100px',
@@ -13,6 +13,9 @@ export const useStyles = makeStyles(() =>
       alignItems: 'center',
       '& h3': {
         marginBottom: '2rem',
+        [theme.breakpoints.down('xs')]: {
+          marginBottom: '1rem',
+        },
       },
     },
   })

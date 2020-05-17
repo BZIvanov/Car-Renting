@@ -24,7 +24,9 @@ const CarDetails = (props) => {
         <span>Price per day:</span>
         {car.pricePerDay.toFixed(2)}
       </Typography>
-      <PrimaryButton onClick={onRentToggle}>RENT IT</PrimaryButton>
+      <PrimaryButton variant="contained" color="primary" onClick={onRentToggle}>
+        RENT IT
+      </PrimaryButton>
       <Link to={`/edit-car/${car._id}`}>Edit car</Link>
     </div>
   );

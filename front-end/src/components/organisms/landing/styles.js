@@ -17,7 +17,7 @@ export const useStyles = makeStyles((theme) =>
         textShadow: '0 0 5px black',
       },
       '& h3': {
-        textShadow: '0 0 3px white',
+        textShadow: '0 0 3px black',
       },
       [theme.breakpoints.down('sm')]: {
         backgroundImage: `url(${tabletImage})`,

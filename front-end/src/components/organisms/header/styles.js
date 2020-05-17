@@ -6,14 +6,14 @@ export const useStyles = makeStyles((theme) =>
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: theme.palette.background.darkGray,
+      backgroundColor: theme.palette.primary.dark,
     },
     navigation: {
       display: 'flex',
       justifyContent: 'center',
-      margin: '5px 0',
       padding: '5px 0',
       color: theme.palette.common.white,
+      height: '60px',
     },
   })
 );

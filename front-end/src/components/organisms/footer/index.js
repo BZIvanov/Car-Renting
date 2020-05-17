@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className={classes.footer}>
       <div className={classes.content}>
-        <Typography varinat="subtitle1">
+        <Typography variant="subtitle1" color="primary">
           &copy; {new Date().getFullYear()} Rent A Car Service Ltd. All Rights
           Reserved
         </Typography>

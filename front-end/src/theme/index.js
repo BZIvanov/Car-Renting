@@ -12,14 +12,18 @@ export const theme = createMuiTheme({
     },
   },
   palette: {
-    common: {
-      semiWhite: '#f7f7f7',
-      semiGray: '#777777',
+    primary: {
+      main: '#e76f51',
+      dark: '#264653',
     },
-    background: {
-      darkGray: '#23393D',
-      semiWhite: '#f7f7f7',
-      semiGray: '#777777',
+    secondary: {
+      main: '#f4a261',
+    },
+    success: {
+      main: '#2a9d8f',
+    },
+    warning: {
+      main: '#e9c46a',
     },
   },
   typography: {
@@ -122,7 +126,7 @@ export const theme = createMuiTheme({
         fontSize: '0.9rem',
       },
       [`@media (max-width:600px)`]: {
-        fontSize: '0.7rem',
+        fontSize: '0.8rem',
       },
     },
     subtitle2: {
