@@ -4,10 +4,10 @@ import { Typography } from '../../atoms';
 
 const Filters = () => {
   return (
-    <div>
+    <aside>
       <Typography variant="h2">Filters</Typography>
       <Search />
-    </div>
+    </aside>
   );
 };
 
