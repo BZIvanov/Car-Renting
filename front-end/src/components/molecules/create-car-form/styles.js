@@ -23,8 +23,8 @@ export const useStyles = makeStyles((theme) =>
       '& div.MuiInput-underline::before': {
         borderBottom: `1px solid ${theme.palette.secondary.main}`,
       },
-      '& div.MuiInput-underline:hover:not($disabled):before': {
-        borderBottom: `1px solid ${theme.palette.secondary.main}`,
+      '& div.MuiInput-underline:hover::before': {
+        borderBottom: `2px solid ${theme.palette.secondary.main}`,
       },
       '& p': {
         color: theme.palette.primary.main,

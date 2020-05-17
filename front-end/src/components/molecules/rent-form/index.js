@@ -29,7 +29,12 @@ const RentForm = (props) => {
       <PrimaryButton variant="contained" color="primary" type="submit">
         RENT!
       </PrimaryButton>
-      <SecondaryButton type="button" onClick={onRentToggle}>
+      <SecondaryButton
+        variant="contained"
+        color="primary"
+        type="button"
+        onClick={onRentToggle}
+      >
         Cancel
       </SecondaryButton>
     </form>

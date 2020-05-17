@@ -19,6 +19,15 @@ export const useStyles = makeStyles((theme) =>
       '& div.MuiFormControl-root': {
         marginBottom: '1rem',
       },
+      '& label': {
+        color: theme.palette.secondary.main,
+      },
+      '& div.MuiInput-underline::before': {
+        borderBottom: `1px solid ${theme.palette.secondary.main}`,
+      },
+      '& div.MuiInput-underline:hover::before': {
+        borderBottom: `2px solid ${theme.palette.secondary.main}`,
+      },
     },
   })
 );

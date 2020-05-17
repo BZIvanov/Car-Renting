@@ -37,7 +37,7 @@ export const useStyles = makeStyles((theme) =>
         marginLeft: '10px',
       },
       '& span': {
-        color: theme.palette.primary.dark,
+        color: theme.palette.info.main,
       },
     },
   })

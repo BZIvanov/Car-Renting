@@ -8,6 +8,7 @@ const Home = () => {
       <Landing />
       <ColorfulDivider />
       <How />
+      <ColorfulDivider />
     </div>
   );
 };

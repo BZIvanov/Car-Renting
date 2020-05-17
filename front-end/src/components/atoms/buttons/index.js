@@ -3,7 +3,7 @@ import { withStyles } from '@material-ui/core';
 
 const StyledButton = withStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.primary.dark,
+    backgroundColor: theme.palette.info.main,
     color: theme.palette.primary.main,
     fontWeight: theme.typography.fontWeightBold,
     lineHeight: 1.6,

@@ -9,7 +9,7 @@ export const useStyles = makeStyles((theme) =>
       position: 'sticky',
       top: 0,
       zIndex: 1400,
-      backgroundColor: theme.palette.primary.dark,
+      backgroundColor: theme.palette.info.main,
     },
     navigation: {
       display: 'flex',

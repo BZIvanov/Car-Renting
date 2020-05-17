@@ -9,7 +9,7 @@ export const useStyles = makeStyles((theme) =>
       paddingLeft: '1.5rem',
       zIndex: 100,
       backgroundColor: 'rgba(0,0,0,0.5)',
-      height: 'calc(100vh - 120px)',
+      height: 'calc(100vh - 60px)',
       marginLeft: '50%',
       [theme.breakpoints.down('xs')]: {
         marginLeft: '0',

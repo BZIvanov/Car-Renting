@@ -1,5 +1,6 @@
 export { default as NavItems } from './nav-items';
 export { default as Search } from './search';
+export { default as InfoCard } from './info-card';
 export { default as RegisterForm } from './register-form';
 export { default as LoginForm } from './login-form';
 export { default as CreateCarForm } from './create-car-form';

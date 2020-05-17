@@ -11,7 +11,7 @@ export const useStyles = makeStyles((theme) =>
       backgroundRepeat: 'no-repeat',
       backgroundAttachment: 'fixed',
       backgroundSize: 'cover',
-      height: 'calc(100vh - 120px)',
+      height: 'calc(100vh - 60px)',
       '& h1': {
         marginBottom: '1.5rem',
         textShadow: '0 0 5px black',

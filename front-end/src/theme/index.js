@@ -14,16 +14,18 @@ export const theme = createMuiTheme({
   palette: {
     primary: {
       main: '#e76f51',
-      dark: '#264653',
     },
     secondary: {
       main: '#f4a261',
+    },
+    info: {
+      main: '#264653',
     },
     success: {
       main: '#2a9d8f',
     },
     warning: {
-      main: '#e9c46a',
+      main: '#625834',
     },
   },
   typography: {
