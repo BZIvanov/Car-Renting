@@ -31,6 +31,7 @@ export const theme = createMuiTheme({
     fontWeightRegular: FONT_REGULAR,
     fontWeightMedium: FONT_MEDIUM,
     fontWeightBold: FONT_BOLD,
+    fontFamily: ['Catamaran', 'Roboto', 'Helvetica', 'sans-serif'].join(','),
     h1: {
       fontWeight: FONT_BOLD,
       fontSize: '3.2rem',
