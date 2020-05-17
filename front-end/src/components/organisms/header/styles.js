@@ -6,6 +6,9 @@ export const useStyles = makeStyles((theme) =>
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+      position: 'sticky',
+      top: 0,
+      zIndex: 1400,
       backgroundColor: theme.palette.primary.dark,
     },
     navigation: {

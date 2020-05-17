@@ -2,6 +2,7 @@ export { default as Layout } from './layout';
 export { default as AppRoutes } from './app-routes';
 export { default as Header } from './header';
 export { default as Landing } from './landing';
+export { default as How } from './how';
 export { default as NewUser } from './register-user';
 export { default as LoginUser } from './login-user';
 export { default as NewCar } from './new-car';

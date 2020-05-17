@@ -11,7 +11,7 @@ export const useStyles = makeStyles((theme) =>
       width: '300px',
       top: '40%',
       left: 'calc(50% - 150px)',
-      zIndex: 1400,
+      zIndex: 1200,
       backgroundColor: theme.palette.background.paper,
       '& button': {
         marginTop: '2rem',

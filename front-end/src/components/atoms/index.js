@@ -11,5 +11,6 @@ export { default as Loading } from './loading';
 export { default as ShadowCover } from './shadow-cover';
 export { default as ImageCover } from './image-cover';
 export { default as PrivateRoute } from './private-route';
+export { default as ColorfulDivider } from './colorful-divider';
 export * from './icons';
 export * from './buttons';

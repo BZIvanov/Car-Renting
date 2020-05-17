@@ -1,8 +1,15 @@
 import React from 'react';
-import { Landing } from '../../organisms';
+import { Landing, How } from '../../organisms';
+import { ColorfulDivider } from '../../atoms';
 
 const Home = () => {
-  return <Landing />;
+  return (
+    <div>
+      <Landing />
+      <ColorfulDivider />
+      <How />
+    </div>
+  );
 };
 
 export default Home;

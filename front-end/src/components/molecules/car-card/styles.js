@@ -25,6 +25,7 @@ export const useStyles = makeStyles((theme) =>
       '& img': {
         width: '100%',
         transform: 'scale(1)',
+        maxHeight: '210px',
       },
     },
     carInfo: {
