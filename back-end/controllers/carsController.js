@@ -22,6 +22,7 @@ exports.addCar = catchAsync(async (req, res, next) => {
 exports.getAll = catchAsync(async (req, res, next) => {
   const allCarsCount = await Car.countDocuments({ isRented: false });
   const filters = new APIFeatures(Car.find({ isRented: false }), req.query)
+    .filter()
     .sort()
     .limitFields()
     .paginate();

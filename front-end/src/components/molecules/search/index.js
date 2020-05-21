@@ -3,12 +3,12 @@ import { useForm } from 'react-hook-form';
 import { SearchIcon, InputBase, IconButton } from '../../atoms';
 import { useStyles } from './styles';
 
-const Search = () => {
+const Search = ({ onFetchCars }) => {
   const classes = useStyles();
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    onFetchCars(undefined, `&model=${data.search}`);
   };
 
   return (

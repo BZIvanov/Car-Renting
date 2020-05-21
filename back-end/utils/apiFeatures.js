@@ -14,7 +14,16 @@ class APIFeatures {
     let queryStr = JSON.stringify(copy);
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
 
-    this.docs = this.docs.find(JSON.parse(queryStr));
+    const toQuery = JSON.parse(queryStr);
+    if (Object.prototype.hasOwnProperty.call(toQuery, 'model')) {
+      if (toQuery.model === '') {
+        delete toQuery.model;
+      } else {
+        toQuery.model = new RegExp(toQuery.model, 'i');
+      }
+    }
+
+    this.docs = this.docs.find(toQuery);
 
     return this;
   }

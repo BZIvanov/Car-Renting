@@ -1,9 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Search } from '../../molecules';
 import { Typography } from '../../atoms';
 import { useStyles } from './styles';
+import * as actions from '../../../store/actions/cars';
 
-const Filters = () => {
+const Filters = ({ onFetchCars }) => {
   const classes = useStyles();
 
   return (
@@ -11,9 +13,15 @@ const Filters = () => {
       <Typography variant="h2" color="primary">
         Filters
       </Typography>
-      <Search />
+      <Search onFetchCars={onFetchCars} />
     </aside>
   );
 };
 
-export default Filters;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onFetchCars: (page, query) => dispatch(actions.fetchCars(page, query)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Filters);

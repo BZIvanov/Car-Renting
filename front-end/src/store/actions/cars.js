@@ -36,11 +36,11 @@ export const carsFail = (error) => {
   };
 };
 
-export const fetchCars = (page = 1) => {
+export const fetchCars = (page = 1, query = '') => {
   return (dispatch) => {
     dispatch(carsStart());
     axios
-      .get(`http://localhost:3100/api/cars?page=${page}`, {
+      .get(`http://localhost:3100/api/cars?page=${page}${query}`, {
         withCredentials: true,
       })
       .then((response) => {
