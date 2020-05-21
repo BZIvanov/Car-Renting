@@ -12,20 +12,22 @@ const Search = () => {
   };
 
   return (
-    <form className={classes.search} onSubmit={handleSubmit(onSubmit)}>
-      <IconButton className={classes.searchIcon} type="submit">
-        <SearchIcon />
-      </IconButton>
-      <InputBase
-        name="search"
-        inputRef={register}
-        placeholder="Search…"
-        classes={{
-          root: classes.inputRoot,
-          input: classes.inputInput,
-        }}
-      />
-    </form>
+    <div className={classes.search}>
+      <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
+        <IconButton className={classes.searchIcon} type="submit">
+          <SearchIcon />
+        </IconButton>
+        <InputBase
+          name="search"
+          inputRef={register}
+          placeholder="Search by name"
+          classes={{
+            root: classes.inputRoot,
+            input: classes.inputInput,
+          }}
+        />
+      </form>
+    </div>
   );
 };
 

@@ -1,11 +1,16 @@
 import React from 'react';
 import { Search } from '../../molecules';
 import { Typography } from '../../atoms';
+import { useStyles } from './styles';
 
 const Filters = () => {
+  const classes = useStyles();
+
   return (
-    <aside>
-      <Typography variant="h2">Filters</Typography>
+    <aside className={classes.filters}>
+      <Typography variant="h2" color="primary">
+        Filters
+      </Typography>
       <Search />
     </aside>
   );
