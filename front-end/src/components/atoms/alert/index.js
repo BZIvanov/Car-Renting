@@ -1,4 +1,5 @@
 import React from 'react';
+import { Typography } from '../';
 import { useStyles } from './styles';
 
 const Alert = ({ alertData }) => {
@@ -6,7 +7,7 @@ const Alert = ({ alertData }) => {
 
   return (
     <div className={`${classes.alert} ${classes[alertData.alertType]}`}>
-      {alertData.message}
+      <Typography variant="h6">{alertData.message}</Typography>
     </div>
   );
 };
