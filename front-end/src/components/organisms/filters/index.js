@@ -18,10 +18,8 @@ const Filters = ({ onFetchCars }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onFetchCars: (page, query) => dispatch(actions.fetchCars(page, query)),
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  onFetchCars: (page, query) => dispatch(actions.fetchCars(page, query)),
+});
 
 export default connect(null, mapDispatchToProps)(Filters);

@@ -28,19 +28,15 @@ const EditCar = (props) => {
   );
 };
 
-const mapStateToProps = (state, props) => {
-  return {
-    car: state.cars.cars.filter((car) => car._id === props.match.params.id)[0],
-    isSuccess: state.cars.success,
-    isLoading: state.cars.loading,
-  };
-};
+const mapStateToProps = (state, props) => ({
+  car: state.cars.cars.filter((car) => car._id === props.match.params.id)[0],
+  isSuccess: state.cars.success,
+  isLoading: state.cars.loading,
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onEditCar: (id, data) => dispatch(actions.editCar(id, data)),
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  onEditCar: (id, data) => dispatch(actions.editCar(id, data)),
+});
 
 export default connect(
   mapStateToProps,

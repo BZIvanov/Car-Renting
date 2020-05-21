@@ -27,10 +27,8 @@ const Header = ({ isAuthenticated }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    isAuthenticated: state.users.user !== null,
-  };
-};
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.users.user !== null,
+});
 
 export default connect(mapStateToProps)(Header);

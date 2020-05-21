@@ -28,17 +28,13 @@ const NewCar = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    isSuccess: state.cars.success,
-    isLoading: state.cars.loading,
-  };
-};
+const mapStateToProps = (state) => ({
+  isSuccess: state.cars.success,
+  isLoading: state.cars.loading,
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onAddCar: (data) => dispatch(actions.createCar(data)),
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  onAddCar: (data) => dispatch(actions.createCar(data)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewCar);

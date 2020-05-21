@@ -36,20 +36,15 @@ const Car = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    isLoading: state.cars.loading,
-    car: state.cars.car,
-    isSuccess: state.rents.success,
-  };
-};
+const mapStateToProps = (state) => ({
+  isLoading: state.cars.loading,
+  car: state.cars.car,
+  isSuccess: state.rents.success,
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onFetchCar: (id) => dispatch(fetchCar(id)),
-    onRentCar: (carId, days, history) =>
-      dispatch(rentCar(carId, days, history)),
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  onFetchCar: (id) => dispatch(fetchCar(id)),
+  onRentCar: (carId, days, history) => dispatch(rentCar(carId, days, history)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Car));

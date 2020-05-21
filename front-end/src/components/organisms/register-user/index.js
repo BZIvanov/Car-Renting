@@ -28,18 +28,14 @@ const NewUser = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    isAuthenticated: state.users.user !== null,
-    isLoading: state.users.loading,
-  };
-};
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.users.user !== null,
+  isLoading: state.users.loading,
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onAuth: (username, email, password) =>
-      dispatch(actions.auth(username, email, password)),
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  onAuth: (username, email, password) =>
+    dispatch(actions.auth(username, email, password)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewUser);

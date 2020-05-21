@@ -43,19 +43,15 @@ const CarsList = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    isLoading: state.cars.loading,
-    cars: state.cars.cars,
-    page: state.cars.page,
-    allCount: state.cars.allCount,
-  };
-};
+const mapStateToProps = (state) => ({
+  isLoading: state.cars.loading,
+  cars: state.cars.cars,
+  page: state.cars.page,
+  allCount: state.cars.allCount,
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onFetchCars: (page) => dispatch(actions.fetchCars(page)),
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  onFetchCars: (page) => dispatch(actions.fetchCars(page)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(CarsList);
