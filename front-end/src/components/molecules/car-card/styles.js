@@ -11,14 +11,14 @@ export const useStyles = makeStyles((theme) =>
       borderTopRightRadius: '1rem',
       borderBottomLeftRadius: '1rem',
       overflow: 'hidden',
-      transition: '100ms ease-in-out',
+      transition: '300ms ease-in-out',
       height: '100%',
       '&:hover': {
         cursor: 'pointer',
         boxShadow: '5px 4px 10px black',
       },
       '&:hover img': {
-        transform: 'scale(1.01)',
+        transform: 'scale(1.02)',
       },
     },
     imgContainer: {

@@ -1,5 +1,6 @@
 export { default as Link } from './link';
 export { default as NavLink } from './nav-link';
+export { default as ScrollToTop } from './scroll-to-top';
 export { default as InputAdornment } from './input-adornment';
 export { default as IconButton } from './icon-button';
 export { default as InputBase } from './input-base';
