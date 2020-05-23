@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { CarCard } from '../../molecules';
-import { Loading, Pagination, NavLink } from '../../atoms';
+import { Loading, Pagination, NavLink, Typography } from '../../atoms';
 import { useStyles } from './styles';
 import * as actions from '../../../store/actions/cars';
 import { PAGE_RESULTS } from '../../../constants';
@@ -30,15 +30,25 @@ const CarsList = (props) => {
   };
 
   return (
-    <section className={classes.content}>
-      <div className={classes.cars}>{renderData}</div>
-      <div className={classes.pagination}>
-        <Pagination
-          count={Math.ceil(allCount / PAGE_RESULTS)}
-          page={page}
-          onChange={handlePageChange}
-        />
-      </div>
+    <section className={classes.section}>
+      {renderData.length > 0 ? (
+        <div className={classes.content}>
+          <div className={classes.cars}>{renderData}</div>
+          <div className={classes.pagination}>
+            <Pagination
+              count={Math.ceil(allCount / PAGE_RESULTS)}
+              page={page}
+              onChange={handlePageChange}
+            />
+          </div>
+        </div>
+      ) : (
+        <div className={classes.empty}>
+          <Typography variant="h3" color="primary">
+            No results
+          </Typography>
+        </div>
+      )}
     </section>
   );
 };

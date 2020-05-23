@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { setAlert } from './alert';
 import * as actionTypes from './actionsTypes';
 
 export const carsStart = () => {
@@ -79,6 +80,7 @@ export const editCar = (id, data) => {
         withCredentials: true,
       })
       .then(() => {
+        dispatch(setAlert(`Car edited succesfuly!`, 'success'));
         dispatch(createCarSuccess());
       })
       .catch((err) => {

@@ -2,6 +2,9 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles((theme) =>
   createStyles({
+    section: {
+      flexGrow: 1,
+    },
     content: {
       display: 'flex',
       justifyContent: 'space-between',
@@ -17,7 +20,11 @@ export const useStyles = makeStyles((theme) =>
       },
     },
     pagination: {
-      margin: '1.3rem',
+      margin: '1.3rem auto',
+    },
+    empty: {
+      textAlign: 'center',
+      marginTop: '3rem',
     },
   })
 );
