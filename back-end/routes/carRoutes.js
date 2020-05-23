@@ -9,7 +9,7 @@ router
 
 router
   .route('/:id')
-  .get(carsController.getCar)
+  .get(authController.protect, carsController.getCar)
   .patch(authController.protect, carsController.updateCar)
   .delete(authController.protect, carsController.deleteCar);
 

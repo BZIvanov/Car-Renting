@@ -95,6 +95,10 @@ exports.rentCar = catchAsync(async (req, res, next) => {
     return next(new AppError('The car is not existing or already rented', 404));
   }
 
+  if (car.creator.toString() === req.user._id.toString()) {
+    return next(new AppError('You can not rent cars you own.', 401));
+  }
+
   await Car.findByIdAndUpdate(req.body.id, { isRented: true });
 
   await Rent.create(rentData);
