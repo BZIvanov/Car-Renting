@@ -11,6 +11,10 @@ export const useStyles = makeStyles((theme) =>
         fontWeight: theme.typography.fontWeightRegular,
         marginRight: '1rem',
       },
+      '& a': {
+        textDecoration: 'none',
+      },
     },
+    actions: {},
   })
 );

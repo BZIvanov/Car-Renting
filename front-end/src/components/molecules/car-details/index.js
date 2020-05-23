@@ -3,8 +3,20 @@ import { Typography, PrimaryButton, Link } from '../../atoms';
 import { useStyles } from './styles';
 
 const CarDetails = (props) => {
-  const { car, onRentToggle } = props;
+  const { car, onRentToggle, isOwner } = props;
   const classes = useStyles();
+
+  const renderAction = isOwner ? (
+    <Link to={`/edit-car/${car._id}`}>
+      <PrimaryButton variant="contained" color="primary">
+        Edit car
+      </PrimaryButton>
+    </Link>
+  ) : (
+    <PrimaryButton variant="contained" color="primary" onClick={onRentToggle}>
+      RENT IT
+    </PrimaryButton>
+  );
 
   return (
     <div className={classes.info}>
@@ -24,10 +36,7 @@ const CarDetails = (props) => {
         <span>Price per day:</span>
         {car.pricePerDay.toFixed(2)}
       </Typography>
-      <PrimaryButton variant="contained" color="primary" onClick={onRentToggle}>
-        RENT IT
-      </PrimaryButton>
-      <Link to={`/edit-car/${car._id}`}>Edit car</Link>
+      <div>{renderAction}</div>
     </div>
   );
 };

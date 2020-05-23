@@ -8,7 +8,15 @@ import { rentCar } from '../../../store/actions/rent';
 import { fetchCar } from '../../../store/actions/cars';
 
 const Car = (props) => {
-  const { isLoading, car, onFetchCar, onRentCar, history, match } = props;
+  const {
+    isLoading,
+    car,
+    isOwner,
+    onFetchCar,
+    onRentCar,
+    history,
+    match,
+  } = props;
   const [showForm, setShowForm] = useState(false);
   const classes = useStyles();
 
@@ -29,7 +37,11 @@ const Car = (props) => {
       {car && (
         <div className={classes.content}>
           <ImageCover image={car.image} />
-          <CarDetails car={car} onRentToggle={() => setShowForm(!showForm)} />
+          <CarDetails
+            car={car}
+            isOwner={isOwner}
+            onRentToggle={() => setShowForm(!showForm)}
+          />
         </div>
       )}
     </section>
@@ -39,6 +51,7 @@ const Car = (props) => {
 const mapStateToProps = (state) => ({
   isLoading: state.cars.loading,
   car: state.cars.car,
+  isOwner: state.cars.car && state.cars.car.creator === state.users.user._id,
   isSuccess: state.rents.success,
 });
 

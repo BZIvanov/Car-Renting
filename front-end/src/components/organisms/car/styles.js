@@ -18,7 +18,7 @@ export const useStyles = makeStyles((theme) =>
       '& > div': {
         width: '50%',
       },
-      '& div:first-of-type': {
+      '& > div:first-of-type': {
         minHeight: '450px',
         marginRight: '35px',
       },
