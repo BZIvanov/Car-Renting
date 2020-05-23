@@ -36,12 +36,16 @@ const Car = (props) => {
       {isLoading && <Loading />}
       {car && (
         <div className={classes.content}>
-          <ImageCover image={car.image} />
-          <CarDetails
-            car={car}
-            isOwner={isOwner}
-            onRentToggle={() => setShowForm(!showForm)}
-          />
+          <div className={classes.image}>
+            <ImageCover image={car.image} />
+          </div>
+          <div className={classes.details}>
+            <CarDetails
+              car={car}
+              isOwner={isOwner}
+              onRentToggle={() => setShowForm(!showForm)}
+            />
+          </div>
         </div>
       )}
     </section>

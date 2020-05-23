@@ -6,15 +6,14 @@ export const useStyles = makeStyles((theme) =>
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      '& span': {
-        fontSize: '1.2rem',
-        fontWeight: theme.typography.fontWeightRegular,
-        marginRight: '1rem',
-      },
       '& a': {
         textDecoration: 'none',
       },
     },
-    actions: {},
+    text: {
+      fontSize: '1.2rem',
+      fontWeight: theme.typography.fontWeightRegular,
+      marginRight: '1rem',
+    },
   })
 );

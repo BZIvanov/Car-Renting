@@ -20,20 +20,20 @@ const CarDetails = (props) => {
 
   return (
     <div className={classes.info}>
-      <Typography variant="h2">
-        <span>Car model:</span>
+      <Typography variant="h3">
+        <span className={classes.text}>Car model:</span>
         {car.model}
       </Typography>
       <Typography variant="h4">
-        <span>Year:</span>
+        <span className={classes.text}>Year:</span>
         {car.year}
       </Typography>
       <Typography variant="h4">
-        <span>City:</span>
+        <span className={classes.text}>City:</span>
         {car.city}
       </Typography>
       <Typography variant="h3">
-        <span>Price per day:</span>
+        <span className={classes.text}>Price per day:</span>
         {car.pricePerDay.toFixed(2)}
       </Typography>
       <div>{renderAction}</div>

@@ -15,12 +15,36 @@ export const useStyles = makeStyles((theme) =>
       borderRadius: '12px',
       boxShadow: '0 0 15px gray',
       overflow: 'hidden',
-      '& > div': {
-        width: '50%',
+      [theme.breakpoints.down('sm')]: {
+        flexDirection: 'column',
+        margin: '80px 15px',
       },
-      '& > div:first-of-type': {
+      [theme.breakpoints.down('xs')]: {
+        margin: '30px 10px',
+      },
+    },
+    image: {
+      marginRight: '2rem',
+      width: '60%',
+      '& > div': {
         minHeight: '450px',
-        marginRight: '35px',
+        [theme.breakpoints.down('sm')]: {
+          minHeight: '350px',
+        },
+        [theme.breakpoints.down('xs')]: {
+          minHeight: '200px',
+        },
+      },
+      [theme.breakpoints.down('sm')]: {
+        width: '100%',
+        marginRight: 0,
+      },
+    },
+    details: {
+      width: '40%',
+      [theme.breakpoints.down('sm')]: {
+        width: '100%',
+        padding: '1rem',
       },
     },
   })

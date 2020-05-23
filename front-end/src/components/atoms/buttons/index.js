@@ -7,6 +7,7 @@ const StyledButton = withStyles((theme) => ({
     color: theme.palette.primary.main,
     fontWeight: theme.typography.fontWeightBold,
     lineHeight: 1.6,
+    textAlign: 'center',
     '&:hover': {
       color: theme.palette.secondary.main,
     },
@@ -21,6 +22,10 @@ export const PrimaryButton = withStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       fontSize: '1rem',
       lineHeight: 1.5,
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '0.9rem',
+      padding: theme.spacing(0.5, 3),
     },
   },
 }))(StyledButton);
