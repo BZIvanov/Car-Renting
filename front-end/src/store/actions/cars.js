@@ -37,12 +37,15 @@ export const carsFail = (error) => {
   };
 };
 
-export const fetchCars = (page = 1, query = '') => {
+export const fetchCars = (page = 1, model) => {
   return (dispatch) => {
     dispatch(carsStart());
     axios
-      .get(`http://localhost:3100/api/cars?page=${page}${query}`, {
+      .get(`http://localhost:3100/api/cars?page=${page}`, {
         withCredentials: true,
+        params: {
+          model,
+        },
       })
       .then((response) => {
         dispatch(

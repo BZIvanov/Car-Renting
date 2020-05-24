@@ -7,8 +7,8 @@ const Search = ({ onFetchCars }) => {
   const classes = useStyles();
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = (data) => {
-    onFetchCars(undefined, `&model=${data.search}`);
+  const onSubmit = ({ model }) => {
+    onFetchCars(undefined, model);
   };
 
   return (
@@ -18,7 +18,7 @@ const Search = ({ onFetchCars }) => {
           <SearchIcon />
         </IconButton>
         <InputBase
-          name="search"
+          name="model"
           inputRef={register}
           placeholder="Search by name"
           classes={{
