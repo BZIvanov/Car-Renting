@@ -1,0 +1,236 @@
+[
+  {
+    "model": "Ferrari F40",
+    "image": "https://vignette.wikia.nocookie.net/gran-turismo/images/1/1b/Ferrari_F40_%2792.jpg/revision/latest?cb=20190130144947",
+    "year": 2018,
+    "city": "Vidin",
+    "pricePerDay": 356.99,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Ferrari 488",
+    "image": "https://i.insider.com/5731016652bcd063018c1e12?width=1100&format=jpeg&auto=webp",
+    "year": 2018,
+    "city": "Sofia",
+    "pricePerDay": 219.501,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Audi R8",
+    "image": "https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_default/v1/editorial/story/hero_image/Audi%20R8%20V10%20Decennium%20front%203-4.jpg",
+    "year": 2017,
+    "city": "Pleven",
+    "pricePerDay": 178.34,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Audi Q5",
+    "image": "https://cdn1.carbuyer.co.uk/sites/carbuyer_d7/files/car_images/q5.jpg",
+    "year": 2014,
+    "city": "Montana",
+    "pricePerDay": 45.99,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Audi A5",
+    "image": "https://images.carandbike.com/car-images/large/audi/a5/audi-a5.webp?v=11",
+    "year": 2011,
+    "city": "Varna",
+    "pricePerDay": 89,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "BMW i8",
+    "image": "https://s.aolcdn.com/commerce/autodata/images/USC90BMC682A021001.jpg",
+    "year": 2019,
+    "city": "Plovdiv",
+    "pricePerDay": 157.571,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "BMW M3",
+    "image": "https://i.dir-i.net/CMS/2019/08/05/0/5f_0t0pev.jpg",
+    "year": 2012,
+    "city": "Pernik",
+    "pricePerDay": 100.01,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Bugatti Veyron",
+    "image": "https://cdn.motor1.com/images/mgl/wMy34/s3/bugatti-veyron-vivere-by-mansory.jpg",
+    "year": 2017,
+    "city": "Svishtov",
+    "pricePerDay": 777.89,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Lada Niva",
+    "image": "https://www.topgear.com/sites/default/files/styles/16x9_1280w/public/images/news-article/2019/12/922ce89fcd3c73f62d4bbb410a3faa66/2020-lada-4x4-russian-spec-1.jpg?itok=TK35qbI0",
+    "year": 2017,
+    "city": "Ruse",
+    "pricePerDay": 25.89,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Toyota Corolla",
+    "image": "https://s.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/640x400/quality/80/https://s.aolcdn.com/commerce/autodata/images/USD00TOC041B021001.jpg",
+    "year": 2015,
+    "city": "Sofia",
+    "pricePerDay": 49.99,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Volvo S60",
+    "image": "https://cnet2.cbsistatic.com/img/0kBbcKj_QO0UTjT9t6lvmpZtlc4=/2018/06/20/93ac42d9-e692-49ae-9e25-8d8b780ef296/volvo-s60-gallery-ogi.jpg",
+    "year": 2016,
+    "city": "Sofia",
+    "pricePerDay": 99.99,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Volvo V60",
+    "image": "https://www.triboform.com/tribo/wp-content/uploads/2018/11/VolvoV60reference-700x467.jpg",
+    "year": 2017,
+    "city": "Petrich",
+    "pricePerDay": 69.19,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Opel Manta",
+    "image": "https://cdn.classicdigest.com/live/carimg/134001_134100/134021_d219fcc6c7ffe08f.jpg",
+    "year": 1991,
+    "city": "Pazardzhik",
+    "pricePerDay": 39,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Fiat 500",
+    "image": "https://images.sandicliffe.co.uk/vehicles/car/ou12xuj/681543.jpg",
+    "year": 1999,
+    "city": "Sofia",
+    "pricePerDay": 29.19,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Audi TT",
+    "image": "https://m.atcdn.co.uk/vms/media/w1920/3fb7994d47dc417a9c1c09907eebbf88.jpg",
+    "year": 2009,
+    "city": "Sofia",
+    "pricePerDay": 35.19,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Honda Civic",
+    "image": "https://gaadiwaadi.com/wp-content/uploads/2020/03/2020-Honda-Civic-Facelift4-1068x631.jpg",
+    "year": 2010,
+    "city": "Plovdiv",
+    "pricePerDay": 28.45,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Audi A3",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/db/2018_Audi_A3_Sport_TDi_Saloon_1.5_Front.jpg",
+    "year": 2012,
+    "city": "Pleven",
+    "pricePerDay": 37.55,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Honda Accord",
+    "image": "https://cars.usnews.com/static/images/Auto/izmo/i159163880/2020_honda_accord_angularfront.jpg",
+    "year": 2014,
+    "city": "Stara Zagora",
+    "pricePerDay": 17.55,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Lamborghini Huracan",
+    "image": "https://www.magnitudefinance.com/app/uploads/2019/09/Huracan-Evo-featured-image.png",
+    "year": 2018,
+    "city": "Smolian",
+    "pricePerDay": 800.01,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Lamborghini Urus",
+    "image": "https://cdn.motor1.com/images/mgl/1MoB9/s3/lamborghini-urus-by-keyvany.jpg",
+    "year": 2019,
+    "city": "Burgas",
+    "pricePerDay": 799.11,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Kia Stinger",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/da/2018_Kia_Stinger_GT2_3.3L_AWD_in_Hichroma_red_front_%282%29_5.23.18.jpg",
+    "year": 2017,
+    "city": "Burgas",
+    "pricePerDay": 122.11,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Tesla Model X",
+    "image": "https://i.ytimg.com/vi/aKra-KgUJIU/maxresdefault.jpg",
+    "year": 2020,
+    "city": "Sofia",
+    "pricePerDay": 223.11,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Audi RS6",
+    "image": "https://cdn.motor1.com/images/mgl/Gw67A/s1/2021-audi-rs6-avant-shot-by-auditography.jpg",
+    "year": 2019,
+    "city": "Sofia",
+    "pricePerDay": 333.11,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Lamborghini Veneno",
+    "image": "https://lh3.googleusercontent.com/proxy/BxOygPDOIGK9SXkOhvpvZrLOtg_nYq47sE2ejoVoMqtVJ1ZrMJ_bJNNOAEnK9KOhutwOJsaFKQYsJUMIndBV6RSZJGV6ZNvqTUpm1uvg108-Sa0dE6jI-GWJoGa6McFz88XaRzGKGpx7wrd6VFneIsrClQ",
+    "year": 2020,
+    "city": "Sofia",
+    "pricePerDay": 998.99,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Mazda 6",
+    "image": "https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_large/v1/editorial/IMG_20190314_070246.jpg",
+    "year": 2018,
+    "city": "Sofia",
+    "pricePerDay": 78.99,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  },
+  {
+    "model": "Ford Mustang",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5d/2018_Ford_Mustang_GT_5.0_Front.jpg",
+    "year": 2017,
+    "city": "Varna",
+    "pricePerDay": 115.0,
+    "isRented": false,
+    "creator": "5ec90530cb008566e491d6c8"
+  }
+]
