@@ -9,7 +9,6 @@ export const useStyles = makeStyles((theme) =>
       color: theme.palette.secondary.main,
       top: 80,
       left: '50%',
-      zIndex: 1500,
       padding: '0.5rem',
       clipPath: 'polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%)',
       textShadow: '0 0 5px black',
