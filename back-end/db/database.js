@@ -21,12 +21,16 @@ mongoose.connection.once('connected', async (err) => {
     return console.log(err);
   }
 
-  const carCount = await Car.countDocuments();
-  if (carCount > 0) {
-    return;
-  }
+  try {
+    const carCount = await Car.countDocuments();
+    if (carCount > 0) {
+      return;
+    }
 
-  const seedDataPath = path.join(__dirname, 'seedData.json');
-  const cars = fs.readFileSync(seedDataPath, 'utf8');
-  await Car.collection.insertMany(JSON.parse(cars));
+    const seedDataPath = path.join(__dirname, 'seedData.json');
+    const cars = fs.readFileSync(seedDataPath, 'utf8');
+    await Car.create(JSON.parse(cars));
+  } catch (error) {
+    console.log('Seeding data to DB error', error);
+  }
 });
