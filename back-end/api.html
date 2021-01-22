@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 5px;
+      }
+      ul {
+        padding: 0;
+      }
+      li {
+        list-style-type: none;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API</title>
+  </head>
+  <body>
+    <h1>Sign up</h1>
+    <h3>Request</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Endpoint</td>
+          <td>http://localhost:3100/api/user/signup</td>
+        </tr>
+        <tr>
+          <td>Method</td>
+          <td>POST</td>
+        </tr>
+        <tr>
+          <td>Example body</td>
+          <td>
+            <pre>
+{
+  "username":"Dimitrina",
+  "email":"dimitrina@mail.com",
+  "password": "12345678"
+}
+            </pre>
+          </td>
+        </tr>
+        <tr>
+          <td>Constraints</td>
+          <td>
+            <ul>
+              <li>
+                <strong>username</strong> - string, required, 3-40 characters
+                long
+              </li>
+              <li><strong>email</strong> - string, email, required</li>
+              <li>
+                <strong>password</strong> - string, required, 8 characters min
+                length
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Response</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Response-type</td>
+          <td>JSON</td>
+        </tr>
+        <tr>
+          <td>Method</td>
+          <td>POST</td>
+        </tr>
+        <tr>
+          <td>Example body</td>
+          <td>
+            <pre>
+{
+  "status": "success",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ",
+  "data": {
+    "user": {
+      "role": "user",
+      "_id": "600b322a35c23343ec06b",
+      "username": "Dimitrina",
+      "email": "dimitrina@mail.com",
+      "__v": 0
+    }
+  }
+}
+            </pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <h1>Login</h1>
+    <h3>Request</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Endpoint</td>
+          <td>http://localhost:3100/api/user/login</td>
+        </tr>
+        <tr>
+          <td>Method</td>
+          <td>POST</td>
+        </tr>
+        <tr>
+          <td>Example body</td>
+          <td>
+            <pre>
+{
+  "email":"dimitrina@mail.com",
+  "password": "12345678"
+}
+            </pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Response</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Response-type</td>
+          <td>JSON</td>
+        </tr>
+        <tr>
+          <td>Method</td>
+          <td>POST</td>
+        </tr>
+        <tr>
+          <td>Example body</td>
+          <td>
+            <pre>
+{
+  "status": "success",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ",
+  "data": {
+    "user": {
+      "role": "user",
+      "_id": "600b322a35c23343ec06b",
+      "username": "Dimitrina",
+      "email": "dimitrina@mail.com",
+      "__v": 0
+    }
+  }
+}
+            </pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+  </body>
+</html>
